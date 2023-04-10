@@ -16,6 +16,10 @@
 		234F9AC729E491A9007774FD /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 234F9AC629E491A9007774FD /* Profile.swift */; };
 		234F9AC929E491B5007774FD /* Maps.swift in Sources */ = {isa = PBXBuildFile; fileRef = 234F9AC829E491B5007774FD /* Maps.swift */; };
 		234F9ACB29E491C0007774FD /* AroundMe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 234F9ACA29E491C0007774FD /* AroundMe.swift */; };
+		234F9AD029E492EE007774FD /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 234F9ACF29E492EE007774FD /* Event.swift */; };
+		234F9AD229E49355007774FD /* News.swift in Sources */ = {isa = PBXBuildFile; fileRef = 234F9AD129E49355007774FD /* News.swift */; };
+		234F9AD429E493A6007774FD /* ColorsTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 234F9AD329E493A6007774FD /* ColorsTheme.swift */; };
+		234F9AD629E493E0007774FD /* Countries.swift in Sources */ = {isa = PBXBuildFile; fileRef = 234F9AD529E493E0007774FD /* Countries.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +33,10 @@
 		234F9AC629E491A9007774FD /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
 		234F9AC829E491B5007774FD /* Maps.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Maps.swift; sourceTree = "<group>"; };
 		234F9ACA29E491C0007774FD /* AroundMe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AroundMe.swift; sourceTree = "<group>"; };
+		234F9ACF29E492EE007774FD /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
+		234F9AD129E49355007774FD /* News.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = News.swift; sourceTree = "<group>"; };
+		234F9AD329E493A6007774FD /* ColorsTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorsTheme.swift; sourceTree = "<group>"; };
+		234F9AD529E493E0007774FD /* Countries.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Countries.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +69,9 @@
 		234F9AB229E49117007774FD /* CoferenceApp */ = {
 			isa = PBXGroup;
 			children = (
+				234F9ACE29E492C6007774FD /* Model */,
+				234F9ACD29E49292007774FD /* Onboarding */,
+				234F9ACC29E4926D007774FD /* Components */,
 				234F9AC129E49166007774FD /* Pages */,
 				234F9AB329E49117007774FD /* CoferenceAppApp.swift */,
 				234F9AB529E49117007774FD /* ContentView.swift */,
@@ -88,6 +99,31 @@
 				234F9ACA29E491C0007774FD /* AroundMe.swift */,
 			);
 			path = Pages;
+			sourceTree = "<group>";
+		};
+		234F9ACC29E4926D007774FD /* Components */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		234F9ACD29E49292007774FD /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Onboarding;
+			sourceTree = "<group>";
+		};
+		234F9ACE29E492C6007774FD /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				234F9ACF29E492EE007774FD /* Event.swift */,
+				234F9AD129E49355007774FD /* News.swift */,
+				234F9AD329E493A6007774FD /* ColorsTheme.swift */,
+				234F9AD529E493E0007774FD /* Countries.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -160,11 +196,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				234F9AD629E493E0007774FD /* Countries.swift in Sources */,
+				234F9AD029E492EE007774FD /* Event.swift in Sources */,
 				234F9ACB29E491C0007774FD /* AroundMe.swift in Sources */,
 				234F9AC529E4919A007774FD /* Events.swift in Sources */,
+				234F9AD229E49355007774FD /* News.swift in Sources */,
 				234F9AC729E491A9007774FD /* Profile.swift in Sources */,
 				234F9AC929E491B5007774FD /* Maps.swift in Sources */,
 				234F9AB629E49117007774FD /* ContentView.swift in Sources */,
+				234F9AD429E493A6007774FD /* ColorsTheme.swift in Sources */,
 				234F9AC329E4918F007774FD /* Home.swift in Sources */,
 				234F9AB429E49117007774FD /* CoferenceAppApp.swift in Sources */,
 			);
