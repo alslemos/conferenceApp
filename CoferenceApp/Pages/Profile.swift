@@ -9,7 +9,7 @@ import SwiftUI
 
 struct Profile: View {
     var body: some View {
-        Text("Profile Profile")
+        Text("Profile Profile - commit")
     }
 }
 
