@@ -20,6 +20,7 @@
 		234F9AD229E49355007774FD /* News.swift in Sources */ = {isa = PBXBuildFile; fileRef = 234F9AD129E49355007774FD /* News.swift */; };
 		234F9AD429E493A6007774FD /* ColorsTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 234F9AD329E493A6007774FD /* ColorsTheme.swift */; };
 		234F9AD629E493E0007774FD /* Countries.swift in Sources */ = {isa = PBXBuildFile; fileRef = 234F9AD529E493E0007774FD /* Countries.swift */; };
+		234F9AD829E49D7F007774FD /* ColorPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 234F9AD729E49D7F007774FD /* ColorPage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +38,7 @@
 		234F9AD129E49355007774FD /* News.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = News.swift; sourceTree = "<group>"; };
 		234F9AD329E493A6007774FD /* ColorsTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorsTheme.swift; sourceTree = "<group>"; };
 		234F9AD529E493E0007774FD /* Countries.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Countries.swift; sourceTree = "<group>"; };
+		234F9AD729E49D7F007774FD /* ColorPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorPage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +113,7 @@
 		234F9ACD29E49292007774FD /* Onboarding */ = {
 			isa = PBXGroup;
 			children = (
+				234F9AD729E49D7F007774FD /* ColorPage.swift */,
 			);
 			path = Onboarding;
 			sourceTree = "<group>";
@@ -198,6 +201,7 @@
 			files = (
 				234F9AD629E493E0007774FD /* Countries.swift in Sources */,
 				234F9AD029E492EE007774FD /* Event.swift in Sources */,
+				234F9AD829E49D7F007774FD /* ColorPage.swift in Sources */,
 				234F9ACB29E491C0007774FD /* AroundMe.swift in Sources */,
 				234F9AC529E4919A007774FD /* Events.swift in Sources */,
 				234F9AD229E49355007774FD /* News.swift in Sources */,
