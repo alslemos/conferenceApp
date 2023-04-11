@@ -89,6 +89,7 @@ struct Home: View {
                 
             }
             .padding(20)
+            .background(Color(uiColor: UIColor.secondarySystemBackground).edgesIgnoringSafeArea(.all))
             
         
         
