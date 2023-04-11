@@ -1,0 +1,18 @@
+{
+  "data" : [
+    {
+      "idiom" : "universal"
+    },
+    {
+      "filename" : "hello.gif",
+      "idiom" : "iphone"
+    },
+    {
+      "idiom" : "ipad"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

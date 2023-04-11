@@ -11,6 +11,7 @@ struct ContentView: View {
     @State var currentPage: Int = 1
     @EnvironmentObject var themeManager: ThemeManager
     
+   
     var body: some View {
         TabView(selection: $currentPage) {
             
@@ -41,9 +42,11 @@ struct ContentView: View {
                 Image(systemName: "person")
             }.tag(6)
                 .environmentObject(themeManager)
+         }
+        
         }
     }
-}
+
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {

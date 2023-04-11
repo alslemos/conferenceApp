@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Country {
+struct Countries {
     let name: String
     let icon: String
     let codeArea: Int
