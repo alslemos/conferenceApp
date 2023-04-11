@@ -24,7 +24,6 @@
 		234F9ADA29E4D33A007774FD /* EventCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 234F9AD929E4D33A007774FD /* EventCard.swift */; };
 		23C7CF3529E5AD5300111FDD /* ThemeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23C7CF3429E5AD5300111FDD /* ThemeManager.swift */; };
 		23C7CF3729E5B3EF00111FDD /* ParkLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23C7CF3629E5B3EF00111FDD /* ParkLocation.swift */; };
-		3024AE5729E49CEB00641A1F /* perfil.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3024AE5629E49CEB00641A1F /* perfil.jpg */; };
 		3024AE5929E4A01E00641A1F /* NewsItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3024AE5829E4A01E00641A1F /* NewsItem.swift */; };
 /* End PBXBuildFile section */
 
@@ -47,7 +46,6 @@
 		234F9AD929E4D33A007774FD /* EventCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventCard.swift; sourceTree = "<group>"; };
 		23C7CF3429E5AD5300111FDD /* ThemeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeManager.swift; sourceTree = "<group>"; };
 		23C7CF3629E5B3EF00111FDD /* ParkLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParkLocation.swift; sourceTree = "<group>"; };
-		3024AE5629E49CEB00641A1F /* perfil.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = perfil.jpg; sourceTree = "<group>"; };
 		3024AE5829E4A01E00641A1F /* NewsItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsItem.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
@@ -88,7 +86,6 @@
 				234F9AB329E49117007774FD /* CoferenceAppApp.swift */,
 				234F9AB529E49117007774FD /* ContentView.swift */,
 				234F9AB729E49119007774FD /* Assets.xcassets */,
-				3024AE5629E49CEB00641A1F /* perfil.jpg */,
 				234F9AB929E49119007774FD /* Preview Content */,
 			);
 			path = CoferenceApp;
@@ -203,7 +200,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				234F9ABB29E49119007774FD /* Preview Assets.xcassets in Resources */,
-				3024AE5729E49CEB00641A1F /* perfil.jpg in Resources */,
 				234F9AB829E49119007774FD /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
