@@ -33,9 +33,8 @@ struct ColorPage: View {
                     }
                     
                 }
-            }
+            }.background(Color(UIColor.secondarySystemBackground))
         }
-        .background(Color(UIColor.secondarySystemBackground))
     }
 }
 
