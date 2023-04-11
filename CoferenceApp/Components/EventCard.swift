@@ -8,18 +8,27 @@
 import SwiftUI
 
 struct EventCard: View {
+    
+    var speakerName: String = "Lynn Streja"
+    var imageName: String = "Alan"
+    var description: String = "Everthing about the new programming language Swift"
+    var localization: String = "@Steve Jobs Theater"
+    
     var body: some View {
         HStack(spacing: 15) {
             VStack(alignment: .leading, spacing: 6) {
                 HStack {
-                    Circle()
-                        .frame(width: 36, height: 36)
-                    Text("Lynn Streja")
+                    Image(imageName)
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .clipShape(Circle())
+                        .frame(width: 46, height: 46)
+                    Text(speakerName)
                 }
-                Text("Everthing about the new programming language Swift")
+                Text(description)
                     .font(.subheadline)
                     .bold()
-                Text("@Steve Jobs Theater")
+                Text(localization)
                     .font(.caption)
 
             }.padding(.vertical)
