@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct ColorPage: View {
+    @EnvironmentObject var theme: ThemeManager
+    
     var body: some View {
         
         NavigationStack {
@@ -20,14 +22,14 @@ struct ColorPage: View {
                     ForEach(ColorApp.allCases, id: \.self) { colorApp in
                         NavigationLink {
                             Text("ola")
-                                .navigationBarBackButtonHidden()
+                              //  .navigationBarBackButtonHidden()
                         } label: {
                             HStack {
                                 colorApp.color.frame(width: 30, height: 30)
                                     .cornerRadius(7)
                                 Text(colorApp.name)
                             }.onTapGesture {
-                                
+                                theme.colorTheme = colorApp
                             }
                         }
                     }
@@ -41,5 +43,17 @@ struct ColorPage: View {
 struct ColorPage_Previews: PreviewProvider {
     static var previews: some View {
         ColorPage()
+    }
+}
+
+
+struct AppAccentColor: EnvironmentKey {
+    static let defaultValue: Color = .red
+}
+
+extension EnvironmentValues {
+    var appAccentColor: Color {
+        get { self[AppAccentColor.self] }
+        set { self[AppAccentColor.self] = newValue }
     }
 }
