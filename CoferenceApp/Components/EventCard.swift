@@ -13,6 +13,7 @@ struct EventCard: View {
     var imageName: String = "Alan"
     var description: String = "Everthing about the new programming language Swift"
     var localization: String = "@Steve Jobs Theater"
+    @State var isFavorite: Bool = false
     
     var body: some View {
         HStack(spacing: 15) {
@@ -37,9 +38,16 @@ struct EventCard: View {
                 HStack {
                     Image(systemName: "map")
                         .foregroundColor(.white)
-                    Image(systemName: "heart.fill")
-                        .foregroundColor(.white)
+                    Button {
+                        print("Favoritou")
+                        isFavorite.toggle()
+                    } label: {
+                        Image(systemName: isFavorite ? "heart.fill" : "heart")
+
+                    }
                 }
+                .foregroundColor(.white)
+                
                 Text("1:30pm")
                     .font(.caption)
                     .padding(.horizontal, 6)
