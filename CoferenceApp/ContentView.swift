@@ -9,6 +9,8 @@ import SwiftUI
 
 struct ContentView: View {
     @State var currentPage: Int = 1
+    @EnvironmentObject var themeManager: ThemeManager
+    
    
     var body: some View {
         TabView(selection: $currentPage) {
@@ -33,10 +35,13 @@ struct ContentView: View {
                 Image(systemName: "person.line.dotted.person.fill")
             }.tag(5)
             
-            Profile().tabItem {
+            //Coloquei o colorPage aqui só pra testar a mudanca de cor
+            //Depois eu removo e coloco o Profile novamente
+            ColorPage().tabItem {
                 Text("Profile")
                 Image(systemName: "person")
             }.tag(6)
+                .environmentObject(themeManager)
          }
         
         }
@@ -46,5 +51,6 @@ struct ContentView: View {
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
+            .environmentObject(ThemeManager())
     }
 }
