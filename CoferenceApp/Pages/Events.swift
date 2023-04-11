@@ -31,8 +31,16 @@ struct Events: View {
     var body: some View {
         
         VStack{
+            
+            HStack(alignment: .top){
+                Image(systemName: "apple.logo").font(.title2)
+                Text("WWDC23").font(.title2).bold()
+                
+            }
+            Spacer(minLength: 15)
+            
             Text("Check the full schedule")
-                .font(.title2.bold())
+                .font(.title3.bold())
 
             DatePicker(
                 "Select a date",
