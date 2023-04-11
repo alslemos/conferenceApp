@@ -40,10 +40,10 @@ struct EventCard: View {
                     .cornerRadius(27)
             }
         }.frame(width: 342)
-        .background(Color.teal)
+        .background(Color.accentColor)
         .cornerRadius(16)
         .foregroundColor(.white)
-        .shadow(color: .black, radius: 4, x: 0 , y: 10)
+        .shadow(color: .black.opacity(0.25), radius: 4, x: 0 , y: 4)
         .padding(.horizontal)
     }
 }
@@ -51,6 +51,6 @@ struct EventCard: View {
 struct EventCard_Previews: PreviewProvider {
     static var previews: some View {
         EventCard()
-            .previewLayout(.fixed(width: 342, height: 124))
+            .previewLayout(.fixed(width: 400, height: 200))
     }
 }
