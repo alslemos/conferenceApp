@@ -21,6 +21,7 @@
 		234F9AD429E493A6007774FD /* ColorsTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 234F9AD329E493A6007774FD /* ColorsTheme.swift */; };
 		234F9AD629E493E0007774FD /* Countries.swift in Sources */ = {isa = PBXBuildFile; fileRef = 234F9AD529E493E0007774FD /* Countries.swift */; };
 		234F9AD829E49D7F007774FD /* ColorPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 234F9AD729E49D7F007774FD /* ColorPage.swift */; };
+		234F9ADA29E4D33A007774FD /* EventCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 234F9AD929E4D33A007774FD /* EventCard.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +40,7 @@
 		234F9AD329E493A6007774FD /* ColorsTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorsTheme.swift; sourceTree = "<group>"; };
 		234F9AD529E493E0007774FD /* Countries.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Countries.swift; sourceTree = "<group>"; };
 		234F9AD729E49D7F007774FD /* ColorPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorPage.swift; sourceTree = "<group>"; };
+		234F9AD929E4D33A007774FD /* EventCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventCard.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +108,7 @@
 		234F9ACC29E4926D007774FD /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				234F9AD929E4D33A007774FD /* EventCard.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -211,6 +214,7 @@
 				234F9AD429E493A6007774FD /* ColorsTheme.swift in Sources */,
 				234F9AC329E4918F007774FD /* Home.swift in Sources */,
 				234F9AB429E49117007774FD /* CoferenceAppApp.swift in Sources */,
+				234F9ADA29E4D33A007774FD /* EventCard.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
