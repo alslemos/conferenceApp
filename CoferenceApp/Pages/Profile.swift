@@ -14,10 +14,11 @@ struct Profile: View {
             
             
             HStack(alignment: .top){
-                Image(systemName: "apple.logo").font(.largeTitle)
-                Text("WWDC23").font(.largeTitle).bold()
+                Image(systemName: "apple.logo").font(.title2)
+                Text("WWDC23").font(.title2).bold()
                 
             }
+            Spacer(minLength: 15)
         
             Image("perfil")
                 .clipShape(Circle())

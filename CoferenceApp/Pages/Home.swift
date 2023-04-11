@@ -14,6 +14,15 @@ struct Home: View {
         
             ScrollView{
                 VStack(spacing:0){
+                    
+                    HStack(alignment: .top){
+                        Image(systemName: "apple.logo").font(.title2)
+                        Text("WWDC23").font(.title2).bold()
+                        
+                    }
+                    Spacer(minLength: 10)
+                    
+                    
                     Image("perfil")
                     Text("Hello,")
                         .font(.system(size: 48))
