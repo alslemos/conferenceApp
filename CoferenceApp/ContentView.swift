@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ContentView: View {
     @State var currentPage: Int = 1
-    
+   
     var body: some View {
         TabView(selection: $currentPage) {
             
@@ -37,9 +37,11 @@ struct ContentView: View {
                 Text("Profile")
                 Image(systemName: "person")
             }.tag(6)
+         }
+        
         }
     }
-}
+
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {

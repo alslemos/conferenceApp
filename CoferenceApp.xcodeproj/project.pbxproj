@@ -20,6 +20,13 @@
 		234F9AD229E49355007774FD /* News.swift in Sources */ = {isa = PBXBuildFile; fileRef = 234F9AD129E49355007774FD /* News.swift */; };
 		234F9AD429E493A6007774FD /* ColorsTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 234F9AD329E493A6007774FD /* ColorsTheme.swift */; };
 		234F9AD629E493E0007774FD /* Countries.swift in Sources */ = {isa = PBXBuildFile; fileRef = 234F9AD529E493E0007774FD /* Countries.swift */; };
+		6F93CFDA29E49D8100D842DB /* countries.json in Resources */ = {isa = PBXBuildFile; fileRef = 6F93CFD929E49D8100D842DB /* countries.json */; };
+		6F93CFDE29E4A21E00D842DB /* Memoji.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F93CFDD29E4A21E00D842DB /* Memoji.swift */; };
+		6F93CFE029E4A22F00D842DB /* QRcode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F93CFDF29E4A22F00D842DB /* QRcode.swift */; };
+		6F93CFE429E4B68300D842DB /* memoji.png in Resources */ = {isa = PBXBuildFile; fileRef = 6F93CFE329E4B68300D842DB /* memoji.png */; };
+		6F93CFEE29E5039400D842DB /* Nationality.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F93CFED29E5039400D842DB /* Nationality.swift */; };
+		6F93CFF029E5046C00D842DB /* Group.png in Resources */ = {isa = PBXBuildFile; fileRef = 6F93CFEF29E5046C00D842DB /* Group.png */; };
+		6F93CFF229E5DB4800D842DB /* Number.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F93CFF129E5DB4800D842DB /* Number.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +44,13 @@
 		234F9AD129E49355007774FD /* News.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = News.swift; sourceTree = "<group>"; };
 		234F9AD329E493A6007774FD /* ColorsTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorsTheme.swift; sourceTree = "<group>"; };
 		234F9AD529E493E0007774FD /* Countries.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Countries.swift; sourceTree = "<group>"; };
+		6F93CFD929E49D8100D842DB /* countries.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = countries.json; sourceTree = "<group>"; };
+		6F93CFDD29E4A21E00D842DB /* Memoji.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Memoji.swift; sourceTree = SOURCE_ROOT; };
+		6F93CFDF29E4A22F00D842DB /* QRcode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRcode.swift; sourceTree = SOURCE_ROOT; };
+		6F93CFE329E4B68300D842DB /* memoji.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = memoji.png; sourceTree = "<group>"; };
+		6F93CFED29E5039400D842DB /* Nationality.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Nationality.swift; sourceTree = "<group>"; };
+		6F93CFEF29E5046C00D842DB /* Group.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Group.png; sourceTree = "<group>"; };
+		6F93CFF129E5DB4800D842DB /* Number.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Number.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +67,7 @@
 		234F9AA729E49117007774FD = {
 			isa = PBXGroup;
 			children = (
+				6F93CFD929E49D8100D842DB /* countries.json */,
 				234F9AB229E49117007774FD /* CoferenceApp */,
 				234F9AB129E49117007774FD /* Products */,
 			);
@@ -76,6 +91,8 @@
 				234F9AB329E49117007774FD /* CoferenceAppApp.swift */,
 				234F9AB529E49117007774FD /* ContentView.swift */,
 				234F9AB729E49119007774FD /* Assets.xcassets */,
+				6F93CFEF29E5046C00D842DB /* Group.png */,
+				6F93CFE329E4B68300D842DB /* memoji.png */,
 				234F9AB929E49119007774FD /* Preview Content */,
 			);
 			path = CoferenceApp;
@@ -111,6 +128,10 @@
 		234F9ACD29E49292007774FD /* Onboarding */ = {
 			isa = PBXGroup;
 			children = (
+				6F93CFDF29E4A22F00D842DB /* QRcode.swift */,
+				6F93CFED29E5039400D842DB /* Nationality.swift */,
+				6F93CFF129E5DB4800D842DB /* Number.swift */,
+				6F93CFDD29E4A21E00D842DB /* Memoji.swift */,
 			);
 			path = Onboarding;
 			sourceTree = "<group>";
@@ -184,7 +205,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6F93CFDA29E49D8100D842DB /* countries.json in Resources */,
+				6F93CFF029E5046C00D842DB /* Group.png in Resources */,
 				234F9ABB29E49119007774FD /* Preview Assets.xcassets in Resources */,
+				6F93CFE429E4B68300D842DB /* memoji.png in Resources */,
 				234F9AB829E49119007774FD /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -200,10 +224,14 @@
 				234F9AD029E492EE007774FD /* Event.swift in Sources */,
 				234F9ACB29E491C0007774FD /* AroundMe.swift in Sources */,
 				234F9AC529E4919A007774FD /* Events.swift in Sources */,
+				6F93CFE029E4A22F00D842DB /* QRcode.swift in Sources */,
+				6F93CFF229E5DB4800D842DB /* Number.swift in Sources */,
 				234F9AD229E49355007774FD /* News.swift in Sources */,
 				234F9AC729E491A9007774FD /* Profile.swift in Sources */,
 				234F9AC929E491B5007774FD /* Maps.swift in Sources */,
 				234F9AB629E49117007774FD /* ContentView.swift in Sources */,
+				6F93CFDE29E4A21E00D842DB /* Memoji.swift in Sources */,
+				6F93CFEE29E5039400D842DB /* Nationality.swift in Sources */,
 				234F9AD429E493A6007774FD /* ColorsTheme.swift in Sources */,
 				234F9AC329E4918F007774FD /* Home.swift in Sources */,
 				234F9AB429E49117007774FD /* CoferenceAppApp.swift in Sources */,
@@ -335,7 +363,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"CoferenceApp/Preview Content\"";
-				DEVELOPMENT_TEAM = TPM3CS87N5;
+				DEVELOPMENT_TEAM = 3Z8B7D9ZQ7;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -348,7 +376,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = filipeilunga.CoferenceApp;
+				PRODUCT_BUNDLE_IDENTIFIER = madu.CoferenceApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -364,7 +392,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"CoferenceApp/Preview Content\"";
-				DEVELOPMENT_TEAM = TPM3CS87N5;
+				DEVELOPMENT_TEAM = 3Z8B7D9ZQ7;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -377,7 +405,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = filipeilunga.CoferenceApp;
+				PRODUCT_BUNDLE_IDENTIFIER = madu.CoferenceApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
