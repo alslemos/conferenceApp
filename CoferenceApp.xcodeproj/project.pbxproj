@@ -24,7 +24,12 @@
 		234F9ADA29E4D33A007774FD /* EventCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 234F9AD929E4D33A007774FD /* EventCard.swift */; };
 		23C7CF3529E5AD5300111FDD /* ThemeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23C7CF3429E5AD5300111FDD /* ThemeManager.swift */; };
 		23C7CF3729E5B3EF00111FDD /* ParkLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23C7CF3629E5B3EF00111FDD /* ParkLocation.swift */; };
+		23C7CF3929E7169900111FDD /* Mocks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23C7CF3829E7169900111FDD /* Mocks.swift */; };
 		3024AE5929E4A01E00641A1F /* NewsItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3024AE5829E4A01E00641A1F /* NewsItem.swift */; };
+		3024AE6529E5F30400641A1F /* About.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3024AE6429E5F30400641A1F /* About.swift */; };
+		3024AE6729E5F32900641A1F /* AboutCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3024AE6629E5F32900641A1F /* AboutCard.swift */; };
+		3024AE6929E5F33300641A1F /* AboutCardBack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3024AE6829E5F33300641A1F /* AboutCardBack.swift */; };
+		3024AE6B29E5F33A00641A1F /* FlippableCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3024AE6A29E5F33A00641A1F /* FlippableCard.swift */; };
 		6F93CFDA29E49D8100D842DB /* countries.json in Resources */ = {isa = PBXBuildFile; fileRef = 6F93CFD929E49D8100D842DB /* countries.json */; };
 		6F93CFDE29E4A21E00D842DB /* Memoji.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F93CFDD29E4A21E00D842DB /* Memoji.swift */; };
 		6F93CFE029E4A22F00D842DB /* QRcode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F93CFDF29E4A22F00D842DB /* QRcode.swift */; };
@@ -32,10 +37,6 @@
 		6F93CFEE29E5039400D842DB /* Nationality.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F93CFED29E5039400D842DB /* Nationality.swift */; };
 		6F93CFF029E5046C00D842DB /* Group.png in Resources */ = {isa = PBXBuildFile; fileRef = 6F93CFEF29E5046C00D842DB /* Group.png */; };
 		6F93CFF229E5DB4800D842DB /* Number.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F93CFF129E5DB4800D842DB /* Number.swift */; };
-		3024AE6529E5F30400641A1F /* About.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3024AE6429E5F30400641A1F /* About.swift */; };
-		3024AE6729E5F32900641A1F /* AboutCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3024AE6629E5F32900641A1F /* AboutCard.swift */; };
-		3024AE6929E5F33300641A1F /* AboutCardBack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3024AE6829E5F33300641A1F /* AboutCardBack.swift */; };
-		3024AE6B29E5F33A00641A1F /* FlippableCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3024AE6A29E5F33A00641A1F /* FlippableCard.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -57,7 +58,12 @@
 		234F9AD929E4D33A007774FD /* EventCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventCard.swift; sourceTree = "<group>"; };
 		23C7CF3429E5AD5300111FDD /* ThemeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeManager.swift; sourceTree = "<group>"; };
 		23C7CF3629E5B3EF00111FDD /* ParkLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParkLocation.swift; sourceTree = "<group>"; };
+		23C7CF3829E7169900111FDD /* Mocks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mocks.swift; sourceTree = "<group>"; };
 		3024AE5829E4A01E00641A1F /* NewsItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsItem.swift; sourceTree = SOURCE_ROOT; };
+		3024AE6429E5F30400641A1F /* About.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = About.swift; sourceTree = "<group>"; };
+		3024AE6629E5F32900641A1F /* AboutCard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutCard.swift; sourceTree = "<group>"; };
+		3024AE6829E5F33300641A1F /* AboutCardBack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutCardBack.swift; sourceTree = "<group>"; };
+		3024AE6A29E5F33A00641A1F /* FlippableCard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlippableCard.swift; sourceTree = "<group>"; };
 		6F93CFD929E49D8100D842DB /* countries.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = countries.json; sourceTree = "<group>"; };
 		6F93CFDD29E4A21E00D842DB /* Memoji.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Memoji.swift; sourceTree = SOURCE_ROOT; };
 		6F93CFDF29E4A22F00D842DB /* QRcode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRcode.swift; sourceTree = SOURCE_ROOT; };
@@ -65,10 +71,6 @@
 		6F93CFED29E5039400D842DB /* Nationality.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Nationality.swift; sourceTree = "<group>"; };
 		6F93CFEF29E5046C00D842DB /* Group.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Group.png; sourceTree = "<group>"; };
 		6F93CFF129E5DB4800D842DB /* Number.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Number.swift; sourceTree = "<group>"; };
-		3024AE6429E5F30400641A1F /* About.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = About.swift; sourceTree = "<group>"; };
-		3024AE6629E5F32900641A1F /* AboutCard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutCard.swift; sourceTree = "<group>"; };
-		3024AE6829E5F33300641A1F /* AboutCardBack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutCardBack.swift; sourceTree = "<group>"; };
-		3024AE6A29E5F33A00641A1F /* FlippableCard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlippableCard.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -170,6 +172,7 @@
 				234F9AD529E493E0007774FD /* Countries.swift */,
 				23C7CF3429E5AD5300111FDD /* ThemeManager.swift */,
 				23C7CF3629E5B3EF00111FDD /* ParkLocation.swift */,
+				23C7CF3829E7169900111FDD /* Mocks.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -266,6 +269,7 @@
 				6F93CFDE29E4A21E00D842DB /* Memoji.swift in Sources */,
 				6F93CFEE29E5039400D842DB /* Nationality.swift in Sources */,
 				234F9AD429E493A6007774FD /* ColorsTheme.swift in Sources */,
+				23C7CF3929E7169900111FDD /* Mocks.swift in Sources */,
 				234F9AC329E4918F007774FD /* Home.swift in Sources */,
 				234F9AB429E49117007774FD /* CoferenceAppApp.swift in Sources */,
 				234F9ADA29E4D33A007774FD /* EventCard.swift in Sources */,
