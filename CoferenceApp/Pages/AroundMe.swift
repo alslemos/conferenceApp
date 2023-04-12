@@ -26,8 +26,10 @@ struct Mock {
         Friend(name: "Renan Gaucho", country: "🇧🇷", role: "iOS Mentor", address: "Ceara, Brazil", location: ParkLocation.init(latitude: 37.3348936, longitude: -122.008833), memoji: "🥸", color: .mint),
         Friend(name: "Steve Jobs", country: "🇺🇸", role: "Apple Co-Founder", address: "Cupertino, California", location: ParkLocation.init(latitude: 37.3345343, longitude: -122.0088873), memoji: "😎", color: .blue),
         Friend(name: "Ana Maria Cunha", country: "🇩🇪", role: "UX Design at Amazon ", address: "Berlim, Germany", location:  ParkLocation.init(latitude: 37.3347441, longitude: -122.0086379), memoji: "😬", color: .purple),
-        Friend(name: "Isabela", country: "🇲🇬", role: "Android Developer at Google", address: "Antananarivo, Madagascar", location: ParkLocation.init(latitude: 37.3343349, longitude: -122.0092112), memoji: "🤔", color: .green),
-        Friend(name: "Jose", country: "🇮🇱", role: "Senior iOS Develoer at Waze", address: "Telavive, Israel", location: ParkLocation.init(latitude: 37.3343349, longitude: -122.0092112), memoji: "🤭", color: .brown)
+        Friend(name: "Isabela Gal Sza", country: "🇲🇬", role: "Android Developer at Google", address: "Antananarivo, Madagascar", location: ParkLocation.init(latitude: 37.3343349, longitude: -122.0092112), memoji: "🤔", color: .green),
+        Friend(name: "Jose Isaque", country: "🇮🇱", role: "Senior iOS Develoer at Waze", address: "Telavive, Israel", location: ParkLocation.init(latitude: 37.3343349, longitude: -122.0092112), memoji: "🤭", color: .brown),
+        Friend(name: "Vicent Pasteur", country: "🇫🇷", role: "Apple Developer Academy Student", address: "Paris, France", location: ParkLocation.init(latitude: 37.3353415, longitude: -122.0097565), memoji: "🥳", color: .yellow),
+        Friend(name: "Joana D'Arc", country: "🇫🇷", role: "Apple Developer Academy Mentor", address: "Domrémy, France", location: ParkLocation.init(latitude: 37.3345583, longitude: -122.0080558), memoji: "😍", color: .green)
     ]
 }
 
@@ -36,7 +38,7 @@ struct AroundMe: View {
     @State private var region = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: 37.334795, longitude: -122.009007), span: MKCoordinateSpan(latitudeDelta: 0.003, longitudeDelta: 0.00))
     
     
-    let friends: [Friend] = Mock.friends
+    @State var friends: [Friend] = Mock.friends
     @State var selectedFriend: Friend?
     
     @State var show = false
@@ -52,7 +54,7 @@ struct AroundMe: View {
                         .frame(width: 50, height: 50)
                         .font(.largeTitle)
                         .background(friend.color)
-                            .cornerRadius(50)
+                        .cornerRadius(50)
                 }
             }
         }
@@ -60,46 +62,50 @@ struct AroundMe: View {
         .edgesIgnoringSafeArea(.all) // ignora o tanto quanto possível
         .padding(.bottom)
         .sheet(isPresented: $show) {
-            ZStack {
-                Color.gray.opacity(0.2)
-                    .edgesIgnoringSafeArea(.all)
-                
-                VStack(spacing: 20) {
-                    VStack(alignment: .leading) {
-                        HStack {
-                            Text(selectedFriend?.country ?? "🇧🇷")
-                            Text(selectedFriend?.name ?? "Joana dos Santos")
-                                .bold()
-                            Spacer()
-                            Button {
-                                show.toggle()
-                            } label: {
-                                Image(systemName: "xmark.circle.fill")
-                                    .font(.largeTitle)
-                            }.symbolRenderingMode(.palette)
-                                .foregroundStyle(.gray, .white)
-                        }
-                        
-                        VStack(alignment: .leading) {
-                            Text(selectedFriend?.role ?? "Apple Developer Academy Student")
-                            Text(selectedFriend?.address ?? "Curitiba Brazil")
-                        }
-                        .font(.subheadline)
-                        .foregroundColor(.secondary)
-                        
+            sheetView()
+        }
+    }
+    
+    func sheetView() ->  some View {
+        ZStack {
+            Color.gray.opacity(0.2)
+                .edgesIgnoringSafeArea(.all)
+            
+            VStack(spacing: 20) {
+                VStack(alignment: .leading) {
+                    HStack {
+                        Text(selectedFriend?.country ?? "🇧🇷")
+                        Text(selectedFriend?.name ?? "Joana dos Santos")
+                            .bold()
+                        Spacer()
+                        Button {
+                            show.toggle()
+                        } label: {
+                            Image(systemName: "xmark.circle.fill")
+                                .font(.largeTitle)
+                        }.symbolRenderingMode(.palette)
+                            .foregroundStyle(.gray, .white)
                     }
-                    Divider()
-                    HStack(spacing: 16) {
-                        ModalButton(iconName: "person.circle.fill", label: "Contact", footnoteLabel: "iMessage", iconColor: .green)
-                        
-                        ModalButton(iconName: "person.circle.fill", label: "Directions", footnoteLabel: "80m", iconColor: .blue)
-                    }
-                    Spacer()
                     
-                }.padding(.top, 20)
+                    VStack(alignment: .leading) {
+                        Text(selectedFriend?.role ?? "Apple Developer Academy Student")
+                        Text(selectedFriend?.address ?? "Curitiba Brazil")
+                    }
+                    .font(.subheadline)
+                    .foregroundColor(.secondary)
+                    
+                }
+                Divider()
+                HStack(spacing: 16) {
+                    ModalButton(iconName: "person.circle.fill", label: "Contact", footnoteLabel: "iMessage", iconColor: .green)
+                    
+                    ModalButton(iconName: "person.circle.fill", label: "Directions", footnoteLabel: "80m", iconColor: .blue)
+                }
+                Spacer()
+                
+            }.padding(.top, 20)
                 .padding(.horizontal)
                 .presentationDetents([.height(UIScreen.main.bounds.height * 0.25)])
-            }
         }
     }
 }
