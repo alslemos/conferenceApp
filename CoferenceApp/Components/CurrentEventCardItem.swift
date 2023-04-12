@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct EventCard: View {
+struct CurrentEventCardItem: View {
     
     var speakerName: String = "Lynn Streja"
     var imageName: String = "Alan"
@@ -17,8 +17,8 @@ struct EventCard: View {
     @State var isFavorite: Bool = false
     
     var body: some View {
-        HStack(spacing: 15) {
-            VStack(alignment: .leading, spacing: 6) {
+        HStack(spacing:0) {
+            VStack(alignment: .leading, spacing: 8) {
                 HStack {
                     Image(imageName)
                         .resizable()
@@ -30,49 +30,50 @@ struct EventCard: View {
                 Text(description)
                     .font(.subheadline)
                     .bold()
+                    .lineLimit(3)
                 Text(localization)
                     .font(.caption)
+                    .padding(.bottom, 4)
+            }.padding(.vertical, 12)
+                .padding(.leading, 24)
 
-            }.padding(.vertical)
-                
-            
+              Spacer()
+               
             VStack(spacing: 25) {
                 HStack {
                     Image(systemName: "map")
                         .foregroundColor(.white)
                     Button {
                         print("Favoritou")
-                        isFavorite.toggle()
+                        
                     } label: {
                         Image(systemName: isFavorite ? "heart.fill" : "heart")
-
                     }
                 }
                 .foregroundColor(.white)
                 
                 Text("1:30pm")
                     .font(.caption)
-                    .padding(.horizontal, 6)
-                    .padding(.vertical, 3)
+                    .padding(5)
+                    .padding(.horizontal,7)
                     .background(Color.white)
-                    .foregroundColor(.teal)
+                    .foregroundColor(.accentColor)
                     .cornerRadius(27)
             }
+            .padding(.trailing,24)
         }
-        .frame(width: UIScreen.main.bounds.width * width)
-        .padding(.horizontal,5)
         .background(Color.accentColor)
         .cornerRadius(16)
         .foregroundColor(.white)
         .shadow(color: .black.opacity(0.25), radius: 4, x: 0 , y: 4)
-        
+        .padding(.top, 12)
     }
     
 }
 
 struct EventCard_Previews: PreviewProvider {
     static var previews: some View {
-        EventCard()
+        CurrentEventCardItem()
             
     }
 }

@@ -12,7 +12,7 @@ struct Home: View {
     
     var body: some View {
         
-            ScrollView{
+            ScrollView(showsIndicators: false) {
                 VStack(spacing:0){
                     
                     HStack(alignment: .top){
@@ -43,7 +43,7 @@ struct Home: View {
                         .font(.title2)
                         .fontWeight(.semibold)
                     
-                    ScrollView(.horizontal){
+                    ScrollView(.horizontal, showsIndicators: false){
                         HStack(spacing: 15){
                             ForEach(numbers, id: \.self) { number in
                                 NewsItem()
@@ -57,51 +57,39 @@ struct Home: View {
                 }
                 .padding(.top,20)
                 
-                VStack(alignment:.leading){
+                VStack(alignment: .leading){
                     Text("Favorite events")
                         .font(.title2)
                         .fontWeight(.semibold)
                     
-                    ScrollView(.horizontal){
-                        HStack(spacing: 10){
+                    ScrollView(.horizontal, showsIndicators: false){
+                        HStack(spacing: 20){
                             ForEach(numbers, id: \.self) { number in
-                                EventCard(width:0.6)
+                                EventCardItem()
                             }
                         }
                         
                         
                     }
-                    
-                    
                 }
                 .padding(.top,20)
                 
-                
-               
-                
-                VStack(alignment:.leading, spacing:20){
+                VStack(alignment:.leading, spacing:10){
                     
                     Text("Today's full schedule (June 6)")
                         .font(.title2)
                         .fontWeight(.semibold)
                     
                     ForEach(numbers, id: \.self) { number in
-                        EventCard()
-                            
+                        CurrentEventCardItem(speakerName: "Lynn Streja",imageName: "Alan",description: "Everthing about the new programming language Swift", localization: "@Steve Jobs Theater", width: 0.90, isFavorite: false)
                     }
                 }.frame(maxWidth: .infinity,alignment: .leading)
-                    .padding(.leading,0)
-                
-                
                 .padding(.top,20)
-                
                 
             }
             .padding(20)
             .background(Color(uiColor: UIColor.secondarySystemBackground).edgesIgnoringSafeArea(.all))
-            
-        
-        
+   
     }
 }
 
