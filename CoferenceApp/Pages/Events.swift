@@ -15,8 +15,8 @@ struct Events: View {
     
     let dateRange: ClosedRange<Date> = {
         let calendar = Calendar.current
-        let startComponents = DateComponents(year: 2022, month: 6, day: 5)
-        let endComponents = DateComponents(year: 2022, month: 6, day: 11)
+        let startComponents = DateComponents(year: 2023, month: 6, day: 5)
+        let endComponents = DateComponents(year: 2023, month: 6, day: 11)
         return calendar.date(from:startComponents)!
         ...
         calendar.date(from:endComponents)!
@@ -78,11 +78,11 @@ struct Events: View {
                 Spacer()
                 
                 ScrollView{
-                    VStack(alignment:.leading, spacing:-10){
+                    VStack(alignment:.leading, spacing: 0){
                         
                         ForEach(numbers, id: \.self) { number in
-                            cardItem(speakerName: "Lynn Streja",imageName: "Alan",description: "Everthing about the new programming language Swift", localization: "@Steve Jobs Theater", width: 0.80, isFavorite: false)
-                        }.padding()
+                            CurrentEventCardItem(speakerName: "Lynn Streja",imageName: "Alan",description: "Everthing about the new programming language Swift", localization: "@Steve Jobs Theater", width: 0.90, isFavorite: false)
+                        }
                         
                     }.frame(maxWidth: .infinity,alignment: .leading)
                         .padding(.leading,0)
