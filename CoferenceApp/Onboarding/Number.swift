@@ -57,6 +57,7 @@ struct Number: View{
             }
         } .background(Color(uiColor: UIColor.secondarySystemBackground)
             .edgesIgnoringSafeArea(.all))
+        .navigationBarBackButtonHidden(true)
     }
 }
 
