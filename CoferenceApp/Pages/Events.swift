@@ -29,68 +29,78 @@ struct Events: View {
     }
     
     var body: some View {
-        
-        VStack{
-            
-            HStack(alignment: .top){
-                Image(systemName: "apple.logo").font(.title2)
-                Text("WWDC23").font(.title2).bold()
-                
-            }
-            Spacer(minLength: 15)
-            
-            Text("Check the full schedule")
-                .font(.title3.bold())
-
-            DatePicker(
-                "Select a date",
-                selection: $date,
-                in: dateRange,
-                displayedComponents: [.date]
-            )
-            
-            .datePickerStyle(.graphical)
-            .labelsHidden()
-            .accentColor(Color.red)
-            .frame(height: 170, alignment: .top)
-            .background(Color.white)
-            .clipShape(RoundedRectangle(cornerRadius: 10))
-            .padding()
-            
+        NavigationView() {
             
             VStack{
-                // so a flecinha eh botao
-                Button {
-                    // acao
+                
+                HStack(alignment: .top){
+                    Image(systemName: "apple.logo").font(.title2)
+                    Text("WWDC23").font(.title2).bold()
                     
-                } label: {
-                    Text(dateFormatter.string(from: date).description)
-                        .frame(maxWidth: .infinity, alignment: .leading)
-                        .foregroundColor(.black)
-                        .font(.title.bold())
-                    Image(systemName: "chevron.forward")
-                        .font(.title)
-                        .foregroundColor(.red)
-                    
-                }.padding()
+                }
+                
+                Spacer(minLength: 15)
+                
+                Text("Check the full schedule")
+                    .font(.title3.bold())
+                
+                DatePicker(
+                    "Select a date",
+                    selection: $date,
+                    in: dateRange,
+                    displayedComponents: [.date]
+                )
+                
+                .datePickerStyle(.graphical)
+                .labelsHidden()
+                .accentColor(Color.red)
+                .frame(height: 170, alignment: .top)
+                .background(Color.white)
+                .clipShape(RoundedRectangle(cornerRadius: 10))
+                .padding()
                 
                 
-                Spacer()
-                
-                ScrollView{
-                    VStack(alignment:.leading, spacing: 0){
+                VStack{
+                    // so a flecinha eh botao
+                    Button {
+                        // acao
                         
-                        ForEach(numbers, id: \.self) { number in
-                            CurrentEventCardItem(speakerName: "Lynn Streja",imageName: "Alan",description: "Everthing about the new programming language Swift", localization: "@Steve Jobs Theater", width: 0.90, isFavorite: false)
+                    } label: {
+                        Text(dateFormatter.string(from: date).description)
+                            .frame(maxWidth: .infinity, alignment: .leading)
+                            .foregroundColor(.black)
+                            .font(.title.bold())
+                        Image(systemName: "chevron.forward")
+                            .font(.title)
+                            .foregroundColor(.red)
+                        
+                    }.padding()
+                    
+                    
+                    Spacer()
+                    
+                    ScrollView{
+                        VStack(alignment:.leading, spacing: 0){
+                            
+                            
+                            
+                            ForEach(numbers, id: \.self) { number in
+                                NavigationLink(destination: About()){
+                                    
+                                    CurrentEventCardItem(speakerName: "Lynn Streja",imageName: "Alan",description: "Everthing about the new programming language Swift", localization: "@Steve Jobs Theater", width: 0.90, isFavorite: false)
+                                }.buttonStyle(PlainButtonStyle())
+                                // mandando para about
+                            }
                         }
-                        
                         
                     }.frame(maxWidth: .infinity,alignment: .leading)
                         .padding(.leading,0)
                 }
                 .background(Color(UIColor.secondarySystemBackground))
                 .padding(.bottom) // mas respeita a área bottom
-            }
+                
+            }.background(Color(uiColor: .systemGray6))
+            
         }.padding()
             .background(Color(uiColor: .systemGray6))
         
@@ -114,10 +124,10 @@ struct Events: View {
                 Text(localization)
                     .font(.caption)
                     .padding(.bottom, 4)
-
+                
             }
-              
-               
+            
+            
             VStack(spacing: 25) {
                 HStack {
                     Image(systemName: "map")
@@ -127,7 +137,7 @@ struct Events: View {
                         
                     } label: {
                         Image(systemName: isFavorite ? "heart.fill" : "heart")
-
+                        
                     }
                 }
                 .foregroundColor(.white)
@@ -147,12 +157,9 @@ struct Events: View {
         .shadow(color: .black.opacity(0.25), radius: 4, x: 0 , y: 4)
         .padding(0)
         .padding(.vertical, 12)
-        
+
     }
-    
 }
-
-
 
 struct Events_Previews: PreviewProvider {
     static var previews: some View {
