@@ -57,15 +57,15 @@ struct Home: View {
                 }
                 .padding(.top,20)
                 
-                VStack{
+                VStack(alignment: .leading){
                     Text("Favorite events")
                         .font(.title2)
                         .fontWeight(.semibold)
                     
                     ScrollView(.horizontal, showsIndicators: false){
-                        HStack(spacing: 10){
+                        HStack(spacing: 20){
                             ForEach(numbers, id: \.self) { number in
-                                CurrentEventCardItem(width:0.6)
+                                EventCardItem()
                             }
                         }
                         
@@ -74,7 +74,7 @@ struct Home: View {
                 }
                 .padding(.top,20)
                 
-                VStack(alignment:.leading, spacing:20){
+                VStack(alignment:.leading, spacing:10){
                     
                     Text("Today's full schedule (June 6)")
                         .font(.title2)

@@ -25,6 +25,7 @@
 		23C7CF3529E5AD5300111FDD /* ThemeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23C7CF3429E5AD5300111FDD /* ThemeManager.swift */; };
 		23C7CF3729E5B3EF00111FDD /* ParkLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23C7CF3629E5B3EF00111FDD /* ParkLocation.swift */; };
 		23C7CF3929E7169900111FDD /* Mocks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23C7CF3829E7169900111FDD /* Mocks.swift */; };
+		23C7CF3B29E7263D00111FDD /* EventCardItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23C7CF3A29E7263D00111FDD /* EventCardItem.swift */; };
 		3024AE5929E4A01E00641A1F /* NewsItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3024AE5829E4A01E00641A1F /* NewsItem.swift */; };
 		3024AE6529E5F30400641A1F /* About.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3024AE6429E5F30400641A1F /* About.swift */; };
 		3024AE6729E5F32900641A1F /* AboutCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3024AE6629E5F32900641A1F /* AboutCard.swift */; };
@@ -59,6 +60,7 @@
 		23C7CF3429E5AD5300111FDD /* ThemeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeManager.swift; sourceTree = "<group>"; };
 		23C7CF3629E5B3EF00111FDD /* ParkLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParkLocation.swift; sourceTree = "<group>"; };
 		23C7CF3829E7169900111FDD /* Mocks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mocks.swift; sourceTree = "<group>"; };
+		23C7CF3A29E7263D00111FDD /* EventCardItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventCardItem.swift; sourceTree = "<group>"; };
 		3024AE5829E4A01E00641A1F /* NewsItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsItem.swift; sourceTree = SOURCE_ROOT; };
 		3024AE6429E5F30400641A1F /* About.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = About.swift; sourceTree = "<group>"; };
 		3024AE6629E5F32900641A1F /* AboutCard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutCard.swift; sourceTree = "<group>"; };
@@ -147,6 +149,7 @@
 				3024AE6629E5F32900641A1F /* AboutCard.swift */,
 				3024AE5829E4A01E00641A1F /* NewsItem.swift */,
 				234F9AD929E4D33A007774FD /* CurrentEventCardItem.swift */,
+				23C7CF3A29E7263D00111FDD /* EventCardItem.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -263,6 +266,7 @@
 				6F93CFF229E5DB4800D842DB /* Number.swift in Sources */,
 				234F9AD229E49355007774FD /* News.swift in Sources */,
 				234F9AC729E491A9007774FD /* Profile.swift in Sources */,
+				23C7CF3B29E7263D00111FDD /* EventCardItem.swift in Sources */,
 				3024AE6929E5F33300641A1F /* AboutCardBack.swift in Sources */,
 				234F9AC929E491B5007774FD /* Maps.swift in Sources */,
 				234F9AB629E49117007774FD /* ContentView.swift in Sources */,
