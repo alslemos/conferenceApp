@@ -37,7 +37,7 @@ struct ContentView: View {
             
             //Coloquei o colorPage aqui só pra testar a mudanca de cor
             //Depois eu removo e coloco o Profile novamente
-            ColorPage().tabItem {
+            Profile().tabItem {
                 Text("Profile")
                 Image(systemName: "person")
             }.tag(6)
