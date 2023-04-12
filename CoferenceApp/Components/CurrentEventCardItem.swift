@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct EventCard: View {
+struct CurrentEventCardItem: View {
     
     var speakerName: String = "Lynn Streja"
     var imageName: String = "Alan"
@@ -34,9 +34,11 @@ struct EventCard: View {
                 Text(localization)
                     .font(.caption)
                     .padding(.bottom, 4)
-
             }.padding(.vertical, 12)
                 .padding(.leading, 24)
+
+            
+              Spacer()
                
             VStack(spacing: 25) {
                 HStack {
@@ -44,34 +46,35 @@ struct EventCard: View {
                         .foregroundColor(.white)
                     Button {
                         print("Favoritou")
-                        isFavorite.toggle()
+                        
                     } label: {
                         Image(systemName: isFavorite ? "heart.fill" : "heart")
-
                     }
                 }
                 .foregroundColor(.white)
                 
                 Text("1:30pm")
                     .font(.caption)
-                    .padding(.vertical, 3)
+                    .padding(5)
+                    .padding(.horizontal,7)
                     .background(Color.white)
-                    .foregroundColor(.teal)
+                    .foregroundColor(.accentColor)
                     .cornerRadius(27)
             }
+            .padding(.trailing,24)
         }
-        .frame(width: UIScreen.main.bounds.width * width)
         .background(Color.accentColor)
         .cornerRadius(16)
         .foregroundColor(.white)
         .shadow(color: .black.opacity(0.25), radius: 4, x: 0 , y: 4)
+        .padding(.top, 12)
     }
     
 }
 
 struct EventCard_Previews: PreviewProvider {
     static var previews: some View {
-        EventCard()
+        CurrentEventCardItem()
             
     }
 }

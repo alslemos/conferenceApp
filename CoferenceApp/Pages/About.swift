@@ -24,7 +24,7 @@ struct About: View {
                 ScrollView(.horizontal,showsIndicators: false){
                     HStack(spacing: 10){
                         ForEach(numbers, id: \.self) { number in
-                            EventCard(width:0.6)
+                            CurrentEventCardItem(width:0.6)
                         }
                     }
                     

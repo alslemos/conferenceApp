@@ -21,7 +21,7 @@
 		234F9AD429E493A6007774FD /* ColorsTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 234F9AD329E493A6007774FD /* ColorsTheme.swift */; };
 		234F9AD629E493E0007774FD /* Countries.swift in Sources */ = {isa = PBXBuildFile; fileRef = 234F9AD529E493E0007774FD /* Countries.swift */; };
 		234F9AD829E49D7F007774FD /* ColorPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 234F9AD729E49D7F007774FD /* ColorPage.swift */; };
-		234F9ADA29E4D33A007774FD /* EventCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 234F9AD929E4D33A007774FD /* EventCard.swift */; };
+		234F9ADA29E4D33A007774FD /* CurrentEventCardItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 234F9AD929E4D33A007774FD /* CurrentEventCardItem.swift */; };
 		23C7CF3529E5AD5300111FDD /* ThemeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23C7CF3429E5AD5300111FDD /* ThemeManager.swift */; };
 		23C7CF3729E5B3EF00111FDD /* ParkLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23C7CF3629E5B3EF00111FDD /* ParkLocation.swift */; };
 		23C7CF3929E7169900111FDD /* Mocks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23C7CF3829E7169900111FDD /* Mocks.swift */; };
@@ -55,7 +55,7 @@
 		234F9AD329E493A6007774FD /* ColorsTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorsTheme.swift; sourceTree = "<group>"; };
 		234F9AD529E493E0007774FD /* Countries.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Countries.swift; sourceTree = "<group>"; };
 		234F9AD729E49D7F007774FD /* ColorPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorPage.swift; sourceTree = "<group>"; };
-		234F9AD929E4D33A007774FD /* EventCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventCard.swift; sourceTree = "<group>"; };
+		234F9AD929E4D33A007774FD /* CurrentEventCardItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentEventCardItem.swift; sourceTree = "<group>"; };
 		23C7CF3429E5AD5300111FDD /* ThemeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeManager.swift; sourceTree = "<group>"; };
 		23C7CF3629E5B3EF00111FDD /* ParkLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParkLocation.swift; sourceTree = "<group>"; };
 		23C7CF3829E7169900111FDD /* Mocks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mocks.swift; sourceTree = "<group>"; };
@@ -146,7 +146,7 @@
 				3024AE6829E5F33300641A1F /* AboutCardBack.swift */,
 				3024AE6629E5F32900641A1F /* AboutCard.swift */,
 				3024AE5829E4A01E00641A1F /* NewsItem.swift */,
-				234F9AD929E4D33A007774FD /* EventCard.swift */,
+				234F9AD929E4D33A007774FD /* CurrentEventCardItem.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -272,7 +272,7 @@
 				23C7CF3929E7169900111FDD /* Mocks.swift in Sources */,
 				234F9AC329E4918F007774FD /* Home.swift in Sources */,
 				234F9AB429E49117007774FD /* CoferenceAppApp.swift in Sources */,
-				234F9ADA29E4D33A007774FD /* EventCard.swift in Sources */,
+				234F9ADA29E4D33A007774FD /* CurrentEventCardItem.swift in Sources */,
 				3024AE6529E5F30400641A1F /* About.swift in Sources */,
 				23C7CF3529E5AD5300111FDD /* ThemeManager.swift in Sources */,
 			);
