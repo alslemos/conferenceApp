@@ -15,8 +15,8 @@ struct Events: View {
     
     let dateRange: ClosedRange<Date> = {
         let calendar = Calendar.current
-        let startComponents = DateComponents(year: 2022, month: 6, day: 5)
-        let endComponents = DateComponents(year: 2022, month: 6, day: 11)
+        let startComponents = DateComponents(year: 2023, month: 6, day: 5)
+        let endComponents = DateComponents(year: 2023, month: 6, day: 11)
         return calendar.date(from:startComponents)!
         ...
         calendar.date(from:endComponents)!
