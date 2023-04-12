@@ -8,50 +8,59 @@
 import SwiftUI
 
 struct Nationality: View {
+    let countries: [Countries] = [
+        Countries(name:"🇧🇸 Bahamas"),
+        Countries(name: "🇧🇭 Bahrain"),
+        Countries(name: "🇧🇩 Bangladesh"),
+        Countries(name: "🇧🇧 Barbados"),
+        Countries(name: "🇧🇾 Belarus"),
+        Countries(name: "🇧🇪 Belgium"),
+        Countries(name: "🇧🇿 Belize"),
+        Countries(name: "🇧🇯 Benin"),
+        Countries(name: "🇧🇹 Bhutan"),
+        Countries(name: "🇧🇴 Bolivia"),
+        Countries(name: "🇧🇦 Bosnia & Herzegovina"),
+        Countries(name: "🇧🇼 Botswana"),
+        Countries(name: "🇧🇷 Brazil")
+    ]
     var body: some View {
-        
-        VStack {
-            Text("What is your nationality?")
-                .font(.system(size: 48))
-                .multilineTextAlignment(.center)
-                .frame(width: 274, height: 180)
-                .bold()
+       
+            NavigationLink(destination: Number()){
                 
-            Spacer()
-            
-//                List {
-//                    Text("🇦🇿 Azerbaijan")
-//                    Text("🇧🇸 Bahamas")
-//                    Text("🇧🇭 Bahrain")
-//                    Text("🇧🇩 Bangladesh")
-//                    Text("🇧🇧 Barbados")
-//                    Text("🇧🇾 Belarus")
-//                    Text("🇧🇪 Belgium")
-//                    Text("🇧🇿 Belize")
-//                    Text("🇧🇯 Benin")
-//                    Text("🇧🇹 Bhutan")
-//                    Text("🇧🇴 Bolivia")
-//                    Text("🇧🇦 Bosnia & Herzegovina")
-//                    Text("🇧🇼 Botswana")
-//                    Text("🇧🇷 Brazil")
-//                   }
-//                }
+                VStack {
+                    Text("What is your nationality?")
+                        .font(.system(size: 48))
+                        .multilineTextAlignment(.center)
+                        .frame(width: 274, height: 180)
+                        .bold()
+                        .foregroundColor(.black)
+                        .padding(.bottom, -10.0)
+                    
+                    Spacer()
+                    List{
+                        ForEach(countries, id:\.self) { country in
+                            HStack {
+                                Text(country.name)
+                                    .foregroundColor(.black)
+                                Spacer()
+                                Image(systemName:"chevron.right")
+                                    .foregroundColor(Color(red: 0.49, green: 0.49, blue: 0.49))
+                            }
+                            
+                        }
+                        
+                    }
+                } .background(Color(UIColor.secondarySystemBackground))
             }
-        }
-}
-
-
-struct EnterCode: View{
-    var body: some View{
-        VStack{
-            Text("Enter the code we just texted you")
-            
-        }
+        
+        
+     }
     }
-}
+  
 
 struct Nationality_Previews: PreviewProvider {
     static var previews: some View {
         Nationality()
     }
 }
+        
