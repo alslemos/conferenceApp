@@ -12,17 +12,18 @@ struct ColorPage: View {
     
     var body: some View {
         
-        NavigationStack {
+        NavigationLink(destination: Home()) {
             VStack {
                 Text("Choose your favorite color theme")
                     .multilineTextAlignment(.center)
                     .font(.system(size: 48))
                     .bold()
+                    .foregroundColor(.black)
                 List {
                     ForEach(ColorApp.allCases, id: \.self) { colorApp in
                         NavigationLink {
                             Text("ola")
-                              //  .navigationBarBackButtonHidden()
+                            //  .navigationBarBackButtonHidden()
                         } label: {
                             HStack {
                                 colorApp.color.frame(width: 30, height: 30)

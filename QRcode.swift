@@ -6,43 +6,55 @@
 //
 
 import SwiftUI
-import AVFoundation
 import UIKit
 
 
 
 struct QRcode: View {
     @State private var isShowingCamera = false
-  
+   // @State private var isTapped = false
+    
     var body: some View {
-        VStack {
-            Image("Group")
-                .resizable()
-                .frame(width: 290, height: 90)
-                .padding(.vertical, 21.0)
-            Text("Please scan your QR code below")
-                .font(.system(size: 48))
-                .multilineTextAlignment(.center)
-                .frame(width: 274, height: 180)
-                .bold()
-                .padding(.top, 11.0)
-            
-            ZStack {
-                RoundedRectangle(cornerRadius: 20)
-                    .frame(width: 282, height: 340)
-                    .foregroundColor(.white)
-                    RoundedRectangle(cornerRadius: 20)
-                    .stroke(.black, lineWidth: 1)
-                    .padding(.all, 45.0)                
-                
-                Button("Open Camera") {
-                    isShowingCamera = true
+        NavigationView {
+            NavigationLink(destination: Nationality()){
+                VStack {
+                    Image("Group")
+                        .resizable()
+                        .frame(width: 290, height: 90)
+                        .padding(.vertical, 21.0)
+                    Text("Please scan your QR code below")
+                        .font(.system(size: 48))
+                        .multilineTextAlignment(.center)
+                        .frame(width: 274, height: 180)
+                        .bold()
+                        .padding(.top, 11.0)
+                        .foregroundColor(.black)
+                    
+                    
+                    ZStack {
+                        
+                        
+                        RoundedRectangle(cornerRadius: 20)
+                            .frame(width: 282, height: 350)
+                            .foregroundColor(.white)
+                        RoundedRectangle(cornerRadius: 20)
+                            .stroke(.black, lineWidth: 1)
+                            .padding(.all, 40)
+                        
+                        Button("Open Camera") {
+                            isShowingCamera = true
+                        }
+                    }
                 }
             }
         }
+        
         .sheet(isPresented: $isShowingCamera) {
             CameraView()
         }
+        
+        
+        
     }
 }
 

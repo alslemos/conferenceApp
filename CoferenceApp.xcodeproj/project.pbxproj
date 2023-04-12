@@ -31,13 +31,14 @@
 		3024AE6729E5F32900641A1F /* AboutCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3024AE6629E5F32900641A1F /* AboutCard.swift */; };
 		3024AE6929E5F33300641A1F /* AboutCardBack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3024AE6829E5F33300641A1F /* AboutCardBack.swift */; };
 		3024AE6B29E5F33A00641A1F /* FlippableCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3024AE6A29E5F33A00641A1F /* FlippableCard.swift */; };
-		6F93CFDA29E49D8100D842DB /* countries.json in Resources */ = {isa = PBXBuildFile; fileRef = 6F93CFD929E49D8100D842DB /* countries.json */; };
 		6F93CFDE29E4A21E00D842DB /* Memoji.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F93CFDD29E4A21E00D842DB /* Memoji.swift */; };
 		6F93CFE029E4A22F00D842DB /* QRcode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F93CFDF29E4A22F00D842DB /* QRcode.swift */; };
 		6F93CFE429E4B68300D842DB /* memoji.png in Resources */ = {isa = PBXBuildFile; fileRef = 6F93CFE329E4B68300D842DB /* memoji.png */; };
 		6F93CFEE29E5039400D842DB /* Nationality.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F93CFED29E5039400D842DB /* Nationality.swift */; };
 		6F93CFF029E5046C00D842DB /* Group.png in Resources */ = {isa = PBXBuildFile; fileRef = 6F93CFEF29E5046C00D842DB /* Group.png */; };
 		6F93CFF229E5DB4800D842DB /* Number.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F93CFF129E5DB4800D842DB /* Number.swift */; };
+		6FC8E30129E5F95C00098654 /* EnterCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FC8E30029E5F95C00098654 /* EnterCode.swift */; };
+		6FC8E30729E7471000098654 /* Jorge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FC8E30629E7471000098654 /* Jorge.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -66,13 +67,14 @@
 		3024AE6629E5F32900641A1F /* AboutCard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutCard.swift; sourceTree = "<group>"; };
 		3024AE6829E5F33300641A1F /* AboutCardBack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutCardBack.swift; sourceTree = "<group>"; };
 		3024AE6A29E5F33A00641A1F /* FlippableCard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlippableCard.swift; sourceTree = "<group>"; };
-		6F93CFD929E49D8100D842DB /* countries.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = countries.json; sourceTree = "<group>"; };
 		6F93CFDD29E4A21E00D842DB /* Memoji.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Memoji.swift; sourceTree = SOURCE_ROOT; };
 		6F93CFDF29E4A22F00D842DB /* QRcode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRcode.swift; sourceTree = SOURCE_ROOT; };
 		6F93CFE329E4B68300D842DB /* memoji.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = memoji.png; sourceTree = "<group>"; };
 		6F93CFED29E5039400D842DB /* Nationality.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Nationality.swift; sourceTree = "<group>"; };
 		6F93CFEF29E5046C00D842DB /* Group.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Group.png; sourceTree = "<group>"; };
 		6F93CFF129E5DB4800D842DB /* Number.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Number.swift; sourceTree = "<group>"; };
+		6FC8E30029E5F95C00098654 /* EnterCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnterCode.swift; sourceTree = "<group>"; };
+		6FC8E30629E7471000098654 /* Jorge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Jorge.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,7 +91,6 @@
 		234F9AA729E49117007774FD = {
 			isa = PBXGroup;
 			children = (
-				6F93CFD929E49D8100D842DB /* countries.json */,
 				234F9AB229E49117007774FD /* CoferenceApp */,
 				234F9AB129E49117007774FD /* Products */,
 			);
@@ -157,11 +158,13 @@
 		234F9ACD29E49292007774FD /* Onboarding */ = {
 			isa = PBXGroup;
 			children = (
-				234F9AD729E49D7F007774FD /* ColorPage.swift */,
+				6FC8E30629E7471000098654 /* Jorge.swift */,
 				6F93CFDF29E4A22F00D842DB /* QRcode.swift */,
 				6F93CFED29E5039400D842DB /* Nationality.swift */,
 				6F93CFF129E5DB4800D842DB /* Number.swift */,
+				6FC8E30029E5F95C00098654 /* EnterCode.swift */,
 				6F93CFDD29E4A21E00D842DB /* Memoji.swift */,
+				234F9AD729E49D7F007774FD /* ColorPage.swift */,
 			);
 			path = Onboarding;
 			sourceTree = "<group>";
@@ -238,7 +241,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6F93CFDA29E49D8100D842DB /* countries.json in Resources */,
 				6F93CFF029E5046C00D842DB /* Group.png in Resources */,
 				234F9ABB29E49119007774FD /* Preview Assets.xcassets in Resources */,
 				6F93CFE429E4B68300D842DB /* memoji.png in Resources */,
@@ -263,6 +265,7 @@
 				3024AE6B29E5F33A00641A1F /* FlippableCard.swift in Sources */,
 				234F9AC529E4919A007774FD /* Events.swift in Sources */,
 				6F93CFE029E4A22F00D842DB /* QRcode.swift in Sources */,
+				6FC8E30729E7471000098654 /* Jorge.swift in Sources */,
 				6F93CFF229E5DB4800D842DB /* Number.swift in Sources */,
 				234F9AD229E49355007774FD /* News.swift in Sources */,
 				234F9AC729E491A9007774FD /* Profile.swift in Sources */,
@@ -276,6 +279,8 @@
 				23C7CF3929E7169900111FDD /* Mocks.swift in Sources */,
 				234F9AC329E4918F007774FD /* Home.swift in Sources */,
 				234F9AB429E49117007774FD /* CoferenceAppApp.swift in Sources */,
+				234F9ADA29E4D33A007774FD /* CurrentEventCardItem.swift in Sources */,
+				6FC8E30129E5F95C00098654 /* EnterCode.swift in Sources */,
 				234F9ADA29E4D33A007774FD /* CurrentEventCardItem.swift in Sources */,
 				3024AE6529E5F30400641A1F /* About.swift in Sources */,
 				23C7CF3529E5AD5300111FDD /* ThemeManager.swift in Sources */,
