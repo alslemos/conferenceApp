@@ -17,7 +17,7 @@ struct CurrentEventCardItem: View {
     @State var isFavorite: Bool = false
     
     var body: some View {
-        HStack(spacing: 15) {
+        HStack(spacing:0) {
             VStack(alignment: .leading, spacing: 8) {
                 HStack {
                     Image(imageName)
@@ -37,7 +37,6 @@ struct CurrentEventCardItem: View {
             }.padding(.vertical, 12)
                 .padding(.leading, 24)
 
-            
               Spacer()
                
             VStack(spacing: 25) {
