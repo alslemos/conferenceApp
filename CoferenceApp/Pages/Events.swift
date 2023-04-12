@@ -78,11 +78,12 @@ struct Events: View {
                 Spacer()
                 
                 ScrollView{
-                    VStack(alignment:.leading, spacing:-10){
+                    VStack(alignment:.leading, spacing: 0){
                         
                         ForEach(numbers, id: \.self) { number in
-                            cardItem(speakerName: "Lynn Streja",imageName: "Alan",description: "Everthing about the new programming language Swift", localization: "@Steve Jobs Theater", width: 0.80, isFavorite: false)
-                        }.padding()
+                            CurrentEventCardItem(speakerName: "Lynn Streja",imageName: "Alan",description: "Everthing about the new programming language Swift", localization: "@Steve Jobs Theater", width: 0.90, isFavorite: false)
+                        }
+                        
                         
                     }.frame(maxWidth: .infinity,alignment: .leading)
                         .padding(.leading,0)
