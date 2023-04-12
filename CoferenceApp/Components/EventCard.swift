@@ -18,7 +18,7 @@ struct EventCard: View {
     
     var body: some View {
         HStack(spacing: 15) {
-            VStack(alignment: .leading, spacing: 6) {
+            VStack(alignment: .leading, spacing: 8) {
                 HStack {
                     Image(imageName)
                         .resizable()
@@ -30,12 +30,14 @@ struct EventCard: View {
                 Text(description)
                     .font(.subheadline)
                     .bold()
+                    .lineLimit(3)
                 Text(localization)
                     .font(.caption)
+                    .padding(.bottom, 4)
 
-            }.padding(.vertical)
-                
-            
+            }.padding(.vertical, 12)
+                .padding(.leading, 24)
+               
             VStack(spacing: 25) {
                 HStack {
                     Image(systemName: "map")
@@ -52,7 +54,6 @@ struct EventCard: View {
                 
                 Text("1:30pm")
                     .font(.caption)
-                    .padding(.horizontal, 6)
                     .padding(.vertical, 3)
                     .background(Color.white)
                     .foregroundColor(.teal)
@@ -60,12 +61,10 @@ struct EventCard: View {
             }
         }
         .frame(width: UIScreen.main.bounds.width * width)
-        .padding(.horizontal,5)
         .background(Color.accentColor)
         .cornerRadius(16)
         .foregroundColor(.white)
         .shadow(color: .black.opacity(0.25), radius: 4, x: 0 , y: 4)
-        
     }
     
 }
