@@ -12,9 +12,8 @@ struct CoferenceAppApp: App {
     @ObservedObject var themeManager = ThemeManager()
     var body: some Scene {
         WindowGroup {
-            ContentView()
-                .environmentObject(themeManager)
-                .accentColor(themeManager.colorTheme.color)
+            Number()
+               
         }
     }
 }
