@@ -9,7 +9,7 @@ import SwiftUI
 
 struct Home: View {
     let numbers = [1, 2, 3, 4, 5]
-    @ObservedObject var viewModel = ViewModel()
+    @EnvironmentObject var viewModel: ViewModel
     
     var body: some View {
         
@@ -66,7 +66,7 @@ struct Home: View {
                     ScrollView(.horizontal, showsIndicators: false){
                         HStack(spacing: 20){
                             ForEach(Array(viewModel.favorites), id: \.id) { event in
-                                EventCardItem(event: event, isFavorite: viewModel.favorites.contains(event))
+                                EventCardItem(event: event, isFavorite: event.isFavorite)
                                     .environmentObject(viewModel)
                             }
                         }
@@ -83,7 +83,7 @@ struct Home: View {
                         .fontWeight(.semibold)
                     
                     ForEach(viewModel.todayEvent, id: \.id) { event in
-                        CurrentEventCardItem(event: event, width: 0.90, isFavorite: viewModel.favorites.contains(event))
+                        CurrentEventCardItem(event: event, width: 0.90, isFavorite: event.isFavorite)
                             .environmentObject(viewModel)
                     }
                 }.frame(maxWidth: .infinity,alignment: .leading)

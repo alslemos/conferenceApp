@@ -12,6 +12,7 @@ import SwiftUI
 class ViewModel: ObservableObject {
     
     private var mockData = EventMock()
+    
     @Published var events: Set<Event> = []
     @Published var speakers: Set<Speaker> = []
     @Published var favorites: Set<Event> = []

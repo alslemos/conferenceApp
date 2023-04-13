@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct ContentView: View {
+    @ObservedObject var viewModel = ViewModel()
+
     @State var currentPage: Int = 1
     var colorApp: ColorApp = .teal
     
@@ -19,11 +21,13 @@ struct ContentView: View {
                     Text("Home")
                     Image(systemName: "house.fill")
                 }.tag(1)
+                    .environmentObject(viewModel)
                 
                 Events().tabItem {
                     Text("Events")
                     Image(systemName: "calendar")
                 }.tag(3)
+                    .environmentObject(viewModel)
                 
                 Maps().tabItem {
                     Text("Maps")

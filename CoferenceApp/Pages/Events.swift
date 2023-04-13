@@ -9,7 +9,7 @@ import SwiftUI
 struct Events: View {
     
     let numbers = [1, 2, 3, 4, 5] // importado do eduardo
-    
+    @EnvironmentObject var viewModel: ViewModel
     
     @State private var date = Date()
     

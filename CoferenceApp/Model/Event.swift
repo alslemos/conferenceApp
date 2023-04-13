@@ -44,6 +44,7 @@ class Event: Identifiable, Hashable {
     var description: String
     var speaker: Speaker
     var date: Date = Date.now
+    var isFavorite: Bool = false
      
      init(description: String, speaker: Speaker, date: Date) {
          self.description = description
