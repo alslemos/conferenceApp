@@ -26,11 +26,11 @@ struct AroundMe: View {
                     selectedFriend = friend
                     show.toggle()
                 } label: {
-                    Text(friend.memoji)
-                        .frame(width: 50, height: 50)
+                    Image(friend.memoji)
+                        .resizable()
+                        .frame(width: 52, height: 78)
                         .font(.largeTitle)
-                        .background(friend.color)
-                        .cornerRadius(50)
+                                                .cornerRadius(50)
                 }
             }
         }
