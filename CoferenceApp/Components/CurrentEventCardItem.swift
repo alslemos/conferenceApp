@@ -54,7 +54,7 @@ struct CurrentEventCardItem: View {
                         }
                         
                     } label: {
-                        Image(systemName: isFavorite ? "heart.fill" : "heart")
+                        Image(systemName: viewModel.favorites.contains(event) ? "heart.fill" : "heart")
                     }
                 }
                 .foregroundColor(.white)
