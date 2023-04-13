@@ -24,7 +24,7 @@ class Speaker: Identifiable, Hashable {
     var imageName: String
     var events: [Event]
     var image: Image {
-        return Image("Alan")
+        return Image(imageName)
     }
     
      init(name: String, role: String, imageName: String, events: [Event]) {
