@@ -83,11 +83,10 @@ struct Events: View {
                         VStack(alignment:.leading, spacing: 0){
                             
                             
-                            
                             ForEach(numbers, id: \.self) { number in
                                 NavigationLink(destination: About()){
-                                    
-                                    CurrentEventCardItem(speakerName: "Lynn Streja",imageName: "Alan",description: "Everthing about the new programming language Swift", localization: "@Steve Jobs Theater", width: 0.90, isFavorite: false)
+                                    EmptyView()
+//                                    CurrentEventCardItem(speakerName: "Lynn Streja",imageName: "Alan",description: "Everthing about the new programming language Swift", localization: "@Steve Jobs Theater", width: 0.90, isFavorite: false)
                                 }.buttonStyle(PlainButtonStyle())
                                 // mandando para about
                             }

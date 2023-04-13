@@ -9,6 +9,7 @@ import SwiftUI
 
 struct CurrentEventCardItem: View {
     
+    var event: Event
     var speakerName: String = "Lynn Streja"
     var imageName: String = "Alan"
     var description: String = "Everthing about the new programming language Swift"
@@ -20,14 +21,14 @@ struct CurrentEventCardItem: View {
         HStack(spacing:0) {
             VStack(alignment: .leading, spacing: 8) {
                 HStack {
-                    Image(imageName)
+                    event.speaker.image
                         .resizable()
                         .aspectRatio(contentMode: .fit)
                         .clipShape(Circle())
                         .frame(width: 46, height: 46)
-                    Text(speakerName)
+                    Text(event.speaker.name)
                 }
-                Text(description)
+                Text(event.description)
                     .font(.subheadline)
                     .bold()
                     .lineLimit(3)
@@ -71,9 +72,4 @@ struct CurrentEventCardItem: View {
     
 }
 
-struct EventCard_Previews: PreviewProvider {
-    static var previews: some View {
-        CurrentEventCardItem()
-            
-    }
-}
+

@@ -9,6 +9,7 @@ import SwiftUI
 
 struct Home: View {
     let numbers = [1, 2, 3, 4, 5]
+    @ObservedObject var viewModel = ViewModel()
     
     var body: some View {
         
@@ -80,12 +81,11 @@ struct Home: View {
                         .font(.title2)
                         .fontWeight(.semibold)
                     
-                    ForEach(numbers, id: \.self) { number in
-                        CurrentEventCardItem(speakerName: "Lynn Streja",imageName: "Alan",description: "Everthing about the new programming language Swift", localization: "@Steve Jobs Theater", width: 0.90, isFavorite: false)
+                    ForEach(viewModel.todayEvent, id: \.id) { event in
+                        CurrentEventCardItem(event: event, width: 0.90, isFavorite: false)
                     }
                 }.frame(maxWidth: .infinity,alignment: .leading)
                 .padding(.top,20)
-                
             }
             .padding(20)
             .background(Color(uiColor: UIColor.secondarySystemBackground).edgesIgnoringSafeArea(.all))

@@ -12,13 +12,19 @@ import SwiftUI
 class ViewModel: ObservableObject {
     
     private var mockData = EventMock()
-    @Published var events: [Event] = []
+    @Published var events: Set<Event> = []
     @Published var speakers: [Speaker] = []
     @Published var favorites: [Event] = []
+    
+    @Published var todayEvent: [Event] = []
     
     init() {
         events = mockData.events
         speakers = mockData.speakers
+        
+        todayEvent = events.filter({ event in
+            Calendar.current.isDateInToday(event.date)
+        })
     }
     
 }
