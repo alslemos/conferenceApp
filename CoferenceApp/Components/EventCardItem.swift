@@ -56,7 +56,7 @@ struct EventCardItem: View {
                         .padding(5)
                         .padding(.horizontal,7)
                         .background(Color.white)
-                        .foregroundColor(.accentColor)
+                        .foregroundColor(ThemeManager.shared.colorTheme.color)
                         .cornerRadius(27)
                     
                     Text("1:30pm")
@@ -64,7 +64,7 @@ struct EventCardItem: View {
                         .padding(5)
                         .padding(.horizontal,7)
                         .background(Color.white)
-                        .foregroundColor(.accentColor)
+                        .foregroundColor(ThemeManager.shared.colorTheme.color)
                         .cornerRadius(27)
                 }
                 .padding(.trailing, 12)
@@ -73,7 +73,7 @@ struct EventCardItem: View {
          //   .padding(.trailing,24)
         }
         .frame(width: UIScreen.main.bounds.width * 0.6)
-        .background(Color.accentColor)
+        .background(ThemeManager.shared.colorTheme.color)
         .cornerRadius(16)
         .foregroundColor(.white)
         .shadow(color: .black.opacity(0.25), radius: 4, x: 0 , y: 4)

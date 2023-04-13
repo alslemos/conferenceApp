@@ -21,7 +21,7 @@ struct EnterCode: View{
                 
                 VStack {
                     TextField("", text: $confirmationCode)
-                        .customTextField(padding: 40)
+                        .customTextField(padding: 38)
                         .padding(EdgeInsets(top: 8, leading: 0, bottom: 8, trailing: 0))
                         .keyboardType(.numberPad)
                         .background(Color.white)

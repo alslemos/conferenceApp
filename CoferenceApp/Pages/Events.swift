@@ -146,12 +146,12 @@ struct Events: View {
                     .font(.caption)
                     .padding(.vertical, 3)
                     .background(Color.white)
-                    .foregroundColor(.teal)
+                    .foregroundColor(ThemeManager.shared.colorTheme.color)
                     .cornerRadius(27)
             }
         }
         .frame(width: UIScreen.main.bounds.width * width)
-        .background(Color.accentColor)
+        .background(ThemeManager.shared.colorTheme.color)
         .cornerRadius(16)
         .foregroundColor(.white)
         .shadow(color: .black.opacity(0.25), radius: 4, x: 0 , y: 4)

@@ -9,7 +9,6 @@ import SwiftUI
 
 @main
 struct CoferenceAppApp: App {
-    @ObservedObject var themeManager = ThemeManager()
     var body: some Scene {
         WindowGroup {
             Jorge()

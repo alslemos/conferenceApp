@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct ColorPage: View {
-    @EnvironmentObject var theme: ThemeManager
     
     var body: some View {
             VStack {
@@ -20,15 +19,12 @@ struct ColorPage: View {
                 List {
                     ForEach(ColorApp.allCases, id: \.self) { colorApp in
                         NavigationLink {
-                            
-                            ContentView()
+                            ContentView(colorApp: colorApp)
                         } label: {
                             HStack {
                                 colorApp.color.frame(width: 30, height: 30)
                                     .cornerRadius(7)
                                 Text(colorApp.name)
-                            }.onTapGesture {
-                                theme.colorTheme = colorApp
                             }
                         }
                 }

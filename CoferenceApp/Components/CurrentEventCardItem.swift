@@ -57,12 +57,12 @@ struct CurrentEventCardItem: View {
                     .padding(5)
                     .padding(.horizontal,7)
                     .background(Color.white)
-                    .foregroundColor(.accentColor)
+                    .foregroundColor(ThemeManager.shared.colorTheme.color)
                     .cornerRadius(27)
             }
             .padding(.trailing,24)
         }
-        .background(Color.accentColor)
+        .background(ThemeManager.shared.colorTheme.color)
         .cornerRadius(16)
         .foregroundColor(.white)
         .shadow(color: .black.opacity(0.25), radius: 4, x: 0 , y: 4)
