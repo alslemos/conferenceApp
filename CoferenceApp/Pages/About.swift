@@ -10,7 +10,9 @@ let numbers = [1, 2, 3, 4, 5]
 
 struct About: View {
     var body: some View {
+        
         ScrollView(showsIndicators: false) {
+            
             FlippableCardView()
                 .frame(width: 270,height:390)
                 .shadow(color: Color.black.opacity(0.1), radius: 15, x: 0, y: 10)
@@ -28,17 +30,14 @@ struct About: View {
                             Text("Ola")
                         }
                     }
-                    
-                    
                 }
-                
-                
             }
             .padding(.top,40)
         }
         .padding(20)
         .padding(.top,40)
         .background(Color(uiColor: UIColor.secondarySystemBackground).edgesIgnoringSafeArea(.all))
+            .edgesIgnoringSafeArea(.all)
     }
 }
 
