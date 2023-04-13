@@ -41,10 +41,19 @@ struct EnterCode: View{
                     
                 }.padding(.horizontal, 20)
                 Spacer()
+                
+                NavigationLink {
+                    ColorPage()
+                } label: {
+                    Color.red.opacity(0)
+                        .frame(width: 300, height: 300)
+                }
+                
             }
             .background(Color(uiColor: UIColor.secondarySystemBackground)
                 .edgesIgnoringSafeArea(.all))
-        }
+           
+        }.navigationBarBackButtonHidden(true)
         
     }
     
@@ -73,7 +82,7 @@ struct TextFieldModifier: ViewModifier {
 }
 
 extension View {
-    func customTextField(padding: CGFloat = 3) -> some View { 
+    func customTextField(padding: CGFloat = 3) -> some View {
         self.modifier(TextFieldModifier(padding: padding))
     }
 }

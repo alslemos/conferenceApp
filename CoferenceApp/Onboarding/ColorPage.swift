@@ -11,7 +11,6 @@ struct ColorPage: View {
     @EnvironmentObject var theme: ThemeManager
     
     var body: some View {
-        
             VStack {
                 Text("Choose your favorite color theme")
                     .multilineTextAlignment(.center)
@@ -32,11 +31,9 @@ struct ColorPage: View {
                                 theme.colorTheme = colorApp
                             }
                         }
-                    
                 }
-            }.background(Color(UIColor.secondarySystemBackground))
-                .navigationBarBackButtonHidden(true)
-        }
+            }.navigationBarBackButtonHidden(true)
+        }.background(Color(UIColor.secondarySystemBackground))
     }
 }
 
