@@ -6,42 +6,53 @@
 //
 
 import SwiftUI
+import Combine
 
 struct EnterCode: View{
+    @State var confirmationCode: String = ""
     var body: some View{
-        NavigationLink(destination: Memoji()){
+        NavigationStack{
             VStack{
                 Text("Enter the code we just texted you")
-                    .font(.system(size: 48))
+                    .font(.system(size: 40))
                     .multilineTextAlignment(.center)
-                    .frame(width: 274, height: 180)
                     .bold()
                     .foregroundColor(.black)
-                List{
-                    Text(" __  __  __  __  __  __    ")
-                        .font(.system(size: 35 ))
-                        .foregroundColor(Color(red: 0.49, green: 0.49, blue: 0.49,opacity: 0.30 ))
+                
+                VStack {
+                    TextField("", text: $confirmationCode)
+                        .customTextField(padding: 40)
+                        .padding(EdgeInsets(top: 8, leading: 0, bottom: 8, trailing: 0))
+                        .keyboardType(.numberPad)
+                        .background(Color.white)
+                        .cornerRadius(14)
+                        .kerning(41)
+                        .font(.title3)
+                        .onReceive(Just(confirmationCode)) {_ in limitText(6)}
+
+                    HStack(spacing: 10) {
+                        ForEach(0..<6) { index in
+                            Rectangle()
+                                .frame(width: 40, height: 2)
+                                .foregroundColor(.gray)
+                                .opacity(index < confirmationCode.count ? 1 : 0.3)
+                        }
+                    }.padding(.top, -18)
                     
-                        
-                }
-                HStack{
-                    Text("Didn’t get it?")
-                        .multilineTextAlignment(.center)
-                        .foregroundColor(Color(red: 0.49, green: 0.49, blue: 0.49))
-                        
-                    Text("Tap here to resend.")
-                        .multilineTextAlignment(.center)
-                        .foregroundColor(Color(red: 0.49, green: 0.49, blue: 0.49))
-                        .bold()
-                }
-                .padding(.bottom, 400)
+                }.padding(.horizontal, 20)
+                Spacer()
             }
             .background(Color(uiColor: UIColor.secondarySystemBackground)
                 .edgesIgnoringSafeArea(.all))
-            
         }
-       
+        
     }
+    
+    func limitText(_ upper: Int) {
+           if confirmationCode.count > upper {
+               confirmationCode = String(confirmationCode.prefix(upper))
+           }
+       }
 }
 
 
@@ -49,5 +60,20 @@ struct EnterCode: View{
 struct EnterCode_Previews: PreviewProvider {
     static var previews: some View {
         EnterCode()
+    }
+}
+
+struct TextFieldModifier: ViewModifier {
+    let padding: CGFloat
+
+    func body(content: Content) -> some View {
+        content
+            .padding(.leading, padding)
+    }
+}
+
+extension View {
+    func customTextField(padding: CGFloat = 3) -> some View { 
+        self.modifier(TextFieldModifier(padding: padding))
     }
 }
