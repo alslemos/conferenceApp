@@ -9,6 +9,7 @@ import SwiftUI
 let numbers = [1, 2, 3, 4, 5]
 
 struct About: View {
+    @EnvironmentObject var viewModel: ViewModel
     var event: Event
     
     var body: some View {
@@ -27,9 +28,9 @@ struct About: View {
                 
                 ScrollView(.horizontal,showsIndicators: false){
                     HStack(spacing: 10){
-                        ForEach(numbers, id: \.self) { number in
-                           // EventCardItem()
-                            Text("Ola")
+                        ForEach(event.speaker.events, id: \.id) { event in
+                            EventCardItem(event: event)
+                                .environmentObject(viewModel)
                         }
                     }
                 }

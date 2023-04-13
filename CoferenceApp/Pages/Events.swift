@@ -96,7 +96,9 @@ struct Events: View {
                             ForEach(viewModel.events.filter({ event in
                                 event.date.isSameDay(as: date)
                             }), id: \.self) { event in
-                                NavigationLink(destination: About(event: event)){
+                                NavigationLink(
+                                    destination: About(event: event).environmentObject(viewModel)
+                                ){
                                                     CurrentEventCardItem(event: event).environmentObject(viewModel)
                                 }.buttonStyle(PlainButtonStyle())
                                 // mandando para about
