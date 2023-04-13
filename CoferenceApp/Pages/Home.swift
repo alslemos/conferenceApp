@@ -51,8 +51,8 @@ struct Home: View {
                     
                     ScrollView(.horizontal, showsIndicators: false){
                         HStack(spacing: 15){
-                            ForEach(numbers, id: \.self) { number in
-                                NewsItem()
+                            ForEach(viewModel.mockNews.news, id: \.self) { new in
+                                NewsItem(new: new)
                             }
                         }
                         
