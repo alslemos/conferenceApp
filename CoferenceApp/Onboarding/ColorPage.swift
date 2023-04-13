@@ -12,7 +12,6 @@ struct ColorPage: View {
     
     var body: some View {
         
-        NavigationLink(destination: Home()) {
             VStack {
                 Text("Choose your favorite color theme")
                     .multilineTextAlignment(.center)
@@ -22,8 +21,8 @@ struct ColorPage: View {
                 List {
                     ForEach(ColorApp.allCases, id: \.self) { colorApp in
                         NavigationLink {
-                            Text("ola")
-                            //  .navigationBarBackButtonHidden()
+                            
+                            ContentView()
                         } label: {
                             HStack {
                                 colorApp.color.frame(width: 30, height: 30)
@@ -33,10 +32,10 @@ struct ColorPage: View {
                                 theme.colorTheme = colorApp
                             }
                         }
-                    }
                     
                 }
             }.background(Color(UIColor.secondarySystemBackground))
+                .navigationBarBackButtonHidden(true)
         }
     }
 }

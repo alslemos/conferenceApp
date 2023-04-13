@@ -57,7 +57,16 @@ struct Number: View {
                     }
                     .padding(.top, 16)
                 }
+                
+              
             }
+            NavigationLink {
+                ColorPage()
+            } label: {
+                Color.red.opacity(0)
+                    .frame(width: 300, height: 300)
+            }
+           
         } .background(Color(uiColor: UIColor.secondarySystemBackground)
             .edgesIgnoringSafeArea(.all))
         .navigationBarBackButtonHidden(true)

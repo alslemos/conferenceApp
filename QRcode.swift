@@ -15,7 +15,6 @@ struct QRcode: View {
    // @State private var isTapped = false
     
     var body: some View {
-        NavigationView {
             NavigationLink(destination: Nationality()){
                 VStack {
                     Image("Group")
@@ -45,8 +44,7 @@ struct QRcode: View {
                             isShowingCamera = true
                         }
                     }
-                }
-            }
+                }.navigationBarBackButtonHidden(true)
         }
         
         .sheet(isPresented: $isShowingCamera) {
