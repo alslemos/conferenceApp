@@ -96,7 +96,14 @@ struct EventMock {
     var events: Set<Event> = []
     
     init() {
-        let startDate = Date()
+        
+        let calendar = Calendar.current
+        var dateComponents = DateComponents()
+        dateComponents.year = 2023
+        dateComponents.month = 6
+        dateComponents.day = 6
+        let startDate = calendar.date(from: dateComponents)!
+        
         let day2 = Date(timeInterval: 60 * 60 * 24, since: startDate)
         let day3 = Date(timeInterval: 60 * 60 * 24 * 2, since: startDate)
         let day4 = Date(timeInterval: 60 * 60 * 24 * 3, since: startDate)

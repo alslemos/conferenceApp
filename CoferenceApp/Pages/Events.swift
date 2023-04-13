@@ -11,12 +11,21 @@ struct Events: View {
     let numbers = [1, 2, 3, 4, 5] // importado do eduardo
     @EnvironmentObject var viewModel: ViewModel
     
+    var wwdcDate: Date {
+        let calendar = Calendar.current
+        var dateComponents = DateComponents()
+        dateComponents.year = 2023
+        dateComponents.month = 6
+        dateComponents.day = 6
+        return calendar.date(from: dateComponents)!
+    }
+    
     @State private var date = Date()
     
     let dateRange: ClosedRange<Date> = {
         let calendar = Calendar.current
-        let startComponents = DateComponents(year: 2023, month: 6, day: 5)
-        let endComponents = DateComponents(year: 2023, month: 6, day: 11)
+        let startComponents = DateComponents(year: 2023, month: 6, day: 6)
+        let endComponents = DateComponents(year: 2023, month: 10, day: 10)
         return calendar.date(from:startComponents)!
         ...
         calendar.date(from:endComponents)!
@@ -63,7 +72,8 @@ struct Events: View {
                 VStack{
                     // so a flecinha eh botao
                     Button {
-                        // acao
+                        
+                        date = date.addingOneDay()
                         
                     } label: {
                         Text(dateFormatter.string(from: date).description)
@@ -83,10 +93,11 @@ struct Events: View {
                         VStack(alignment:.leading, spacing: 0){
                             
                             
-                            ForEach(numbers, id: \.self) { number in
+                            ForEach(viewModel.events.filter({ event in
+                                event.date.isSameDay(as: date)
+                            }), id: \.self) { event in
                                 NavigationLink(destination: About()){
-                                    EmptyView()
-//                                    CurrentEventCardItem(speakerName: "Lynn Streja",imageName: "Alan",description: "Everthing about the new programming language Swift", localization: "@Steve Jobs Theater", width: 0.90, isFavorite: false)
+                                                    CurrentEventCardItem(event: event).environmentObject(viewModel)
                                 }.buttonStyle(PlainButtonStyle())
                                 // mandando para about
                             }
@@ -102,6 +113,9 @@ struct Events: View {
             
         }.padding()
             .background(Color(uiColor: .systemGray6))
+            .onAppear {
+                date = wwdcDate
+            }
         
     }
     
@@ -166,3 +180,19 @@ struct Events_Previews: PreviewProvider {
     }
 }
 
+extension Date {
+    func isSameDay(as date: Date) -> Bool {
+        let calendar = Calendar.current
+        let components = calendar.dateComponents([.year, .month, .day], from: self)
+        let otherComponents = calendar.dateComponents([.year, .month, .day], from: date)
+        return components.year == otherComponents.year &&
+               components.month == otherComponents.month &&
+               components.day == otherComponents.day
+    }
+}
+extension Date {
+    func addingOneDay() -> Date {
+        let calendar = Calendar.current
+        return calendar.date(byAdding: .day, value: 1, to: self) ?? self
+    }
+}
