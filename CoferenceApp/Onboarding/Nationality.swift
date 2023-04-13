@@ -9,20 +9,21 @@ import SwiftUI
 
 struct Nationality: View {
     let countries: [Countries] = [
-        Countries(name:"🇧🇸 Bahamas"),
-        Countries(name: "🇧🇭 Bahrain"),
-        Countries(name: "🇧🇩 Bangladesh"),
-        Countries(name: "🇧🇧 Barbados"),
-        Countries(name: "🇧🇾 Belarus"),
-        Countries(name: "🇧🇪 Belgium"),
-        Countries(name: "🇧🇿 Belize"),
-        Countries(name: "🇧🇯 Benin"),
-        Countries(name: "🇧🇹 Bhutan"),
-        Countries(name: "🇧🇴 Bolivia"),
-        Countries(name: "🇧🇦 Bosnia & Herzegovina"),
-        Countries(name: "🇧🇼 Botswana"),
-        Countries(name: "🇧🇷 Brazil")
+        Countries(name:"Bahamas", flag: "🇧🇸", phoneCode: "+1"),
+        Countries(name: "Bahrain", flag: "🇧🇭", phoneCode: "+973"),
+        Countries(name: "Bangladesh", flag: "🇧🇩", phoneCode: "+880"),
+        Countries(name: "Barbados", flag: "🇧🇧", phoneCode: "+1"),
+        Countries(name: "Belarus", flag: "🇧🇾", phoneCode: "+375"),
+        Countries(name: "Belgium", flag: "🇧🇪", phoneCode: "+32"),
+        Countries(name: "Belize", flag: "🇧🇿", phoneCode: "+501"),
+        Countries(name: "Benin", flag: "🇧🇯", phoneCode: "+229"),
+        Countries(name: "Bhutan", flag: "🇧🇹", phoneCode: "+975"),
+        Countries(name: "Bolivia", flag: "🇧🇴", phoneCode: "+591"),
+        Countries(name: "Bosnia & Herzegovina", flag: "🇧🇦", phoneCode: "+387"),
+        Countries(name: "Botswana", flag: "🇧🇼", phoneCode: "+267"),
+        Countries(name: "Brazil", flag: "🇧🇷", phoneCode: "+55")
     ]
+    
     var body: some View {
             VStack {
                 Text("What is your nationality?")
@@ -36,10 +37,10 @@ struct Nationality: View {
                     ForEach(countries, id:\.self) { country in
                         
                         NavigationLink {
-                            Number()
+                            Number(selectedCountry: "\(country.flag) \(country.phoneCode)")
                         } label: {
                             HStack {
-                                Text(country.name)
+                                Text("\(country.flag) \(country.name)")
                                     .foregroundColor(.black)
                             }
                         }

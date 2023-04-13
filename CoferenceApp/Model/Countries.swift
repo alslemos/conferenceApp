@@ -7,10 +7,13 @@
 import SwiftUI
 import Foundation
 
-struct Countries: Hashable{
+struct Countries: Hashable {
+    let id: UUID = UUID()
     let name: String
-    
+    let flag: String
+    let phoneCode: String
 }
+
 //enum Countries: CaseIterable {
 //
 //    case Azerbaijan
