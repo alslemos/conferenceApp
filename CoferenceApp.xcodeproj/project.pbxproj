@@ -26,6 +26,7 @@
 		23C7CF3729E5B3EF00111FDD /* ParkLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23C7CF3629E5B3EF00111FDD /* ParkLocation.swift */; };
 		23C7CF3929E7169900111FDD /* Mocks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23C7CF3829E7169900111FDD /* Mocks.swift */; };
 		23C7CF3B29E7263D00111FDD /* EventCardItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23C7CF3A29E7263D00111FDD /* EventCardItem.swift */; };
+		23C7CF3D29E874BF00111FDD /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23C7CF3C29E874BF00111FDD /* ViewModel.swift */; };
 		3024AE5929E4A01E00641A1F /* NewsItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3024AE5829E4A01E00641A1F /* NewsItem.swift */; };
 		3024AE6529E5F30400641A1F /* About.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3024AE6429E5F30400641A1F /* About.swift */; };
 		3024AE6729E5F32900641A1F /* AboutCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3024AE6629E5F32900641A1F /* AboutCard.swift */; };
@@ -62,6 +63,7 @@
 		23C7CF3629E5B3EF00111FDD /* ParkLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParkLocation.swift; sourceTree = "<group>"; };
 		23C7CF3829E7169900111FDD /* Mocks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mocks.swift; sourceTree = "<group>"; };
 		23C7CF3A29E7263D00111FDD /* EventCardItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventCardItem.swift; sourceTree = "<group>"; };
+		23C7CF3C29E874BF00111FDD /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		3024AE5829E4A01E00641A1F /* NewsItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsItem.swift; sourceTree = SOURCE_ROOT; };
 		3024AE6429E5F30400641A1F /* About.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = About.swift; sourceTree = "<group>"; };
 		3024AE6629E5F32900641A1F /* AboutCard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutCard.swift; sourceTree = "<group>"; };
@@ -179,6 +181,7 @@
 				23C7CF3429E5AD5300111FDD /* ThemeManager.swift */,
 				23C7CF3629E5B3EF00111FDD /* ParkLocation.swift */,
 				23C7CF3829E7169900111FDD /* Mocks.swift */,
+				23C7CF3C29E874BF00111FDD /* ViewModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -265,6 +268,7 @@
 				3024AE6B29E5F33A00641A1F /* FlippableCard.swift in Sources */,
 				234F9AC529E4919A007774FD /* Events.swift in Sources */,
 				6F93CFE029E4A22F00D842DB /* QRcode.swift in Sources */,
+				23C7CF3D29E874BF00111FDD /* ViewModel.swift in Sources */,
 				6FC8E30729E7471000098654 /* Jorge.swift in Sources */,
 				6F93CFF229E5DB4800D842DB /* Number.swift in Sources */,
 				234F9AD229E49355007774FD /* News.swift in Sources */,

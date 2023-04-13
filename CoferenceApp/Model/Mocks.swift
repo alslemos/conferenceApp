@@ -31,4 +31,6 @@ struct Mock {
         Friend(name: "Vicent Pasteur", country: "🇫🇷", role: "Apple Developer Academy Student", address: "Paris, France", location: ParkLocation.init(latitude: 37.3353415, longitude: -122.0097565), memoji: "🥳", color: .yellow),
         Friend(name: "Joana D'Arc", country: "🇫🇷", role: "Apple Developer Academy Mentor", address: "Domrémy, France", location: ParkLocation.init(latitude: 37.3345583, longitude: -122.0080558), memoji: "😍", color: .green)
     ]
+    
+    
 }
