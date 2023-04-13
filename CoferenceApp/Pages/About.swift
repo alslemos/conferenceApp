@@ -9,11 +9,13 @@ import SwiftUI
 let numbers = [1, 2, 3, 4, 5]
 
 struct About: View {
+    var event: Event
+    
     var body: some View {
         
         ScrollView(showsIndicators: false) {
             
-            FlippableCardView()
+            FlippableCardView(speaker: event.speaker)
                 .frame(width: 270,height:390)
                 .shadow(color: Color.black.opacity(0.1), radius: 15, x: 0, y: 10)
 //
@@ -38,11 +40,5 @@ struct About: View {
         .padding(.top,40)
         .background(Color(uiColor: UIColor.secondarySystemBackground).edgesIgnoringSafeArea(.all))
             .edgesIgnoringSafeArea(.all)
-    }
-}
-
-struct About_Previews: PreviewProvider {
-    static var previews: some View {
-        About()
     }
 }
