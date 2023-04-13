@@ -39,57 +39,57 @@ struct Events: View {
     
     var body: some View {
         NavigationView() {
-            
-            VStack{
-                
-                HStack(alignment: .top){
-                    Image(systemName: "apple.logo").font(.title2)
-                    Text("WWDC23").font(.title2).bold()
-                    
-                }
-                
-                Spacer(minLength: 15)
-                
-                Text("Check the full schedule")
-                    .font(.title3.bold())
-                
-                DatePicker(
-                    "Select a date",
-                    selection: $date,
-                    in: dateRange,
-                    displayedComponents: [.date]
-                )
-                
-                .datePickerStyle(.graphical)
-                .labelsHidden()
-                .accentColor(Color.red)
-                .frame(height: 170, alignment: .top)
-                .background(Color.white)
-                .clipShape(RoundedRectangle(cornerRadius: 10))
-                .padding()
-                
-                
+            ScrollView(showsIndicators: false){
                 VStack{
-                    // so a flecinha eh botao
-                    Button {
+                    
+                    HStack(alignment: .top){
+                        Image(systemName: "apple.logo").font(.title2)
+                        Text("WWDC23").font(.title2).bold()
                         
-                        date = date.addingOneDay()
-                        
-                    } label: {
-                        Text(dateFormatter.string(from: date).description)
-                            .frame(maxWidth: .infinity, alignment: .leading)
-                            .foregroundColor(.black)
-                            .font(.title.bold())
-                        Image(systemName: "chevron.forward")
-                            .font(.title)
-                            .foregroundColor(.red)
-                        
-                    }.padding()
+                    }
+                    
+                    Spacer(minLength: 15)
+                    
+                    Text("Check the full schedule")
+                        .font(.title3.bold())
+                    
+                    DatePicker(
+                        "Select a date",
+                        selection: $date,
+                        in: dateRange,
+                        displayedComponents: [.date]
+                    )
+                    
+                    .datePickerStyle(.graphical)
+                    .labelsHidden()
+                    .accentColor(Color.red)
+                    .frame(height: 170, alignment: .top)
+                    .background(Color.white)
+                    .clipShape(RoundedRectangle(cornerRadius: 10))
+                    .padding()
                     
                     
-                    Spacer()
-                    
-                    ScrollView{
+                    VStack{
+                        Button {
+                            withAnimation {
+                                date = date.addingOneDay()
+                            }
+                            
+                        } label: {
+                            Text(dateFormatter.string(from: date).description)
+                                .frame(maxWidth: .infinity, alignment: .leading)
+                                .foregroundColor(.black)
+                                .font(.title.bold())
+                            Image(systemName: "chevron.forward")
+                                .font(.title)
+                                .foregroundColor(.red)
+                            
+                        }.padding()
+                        
+                        
+                        Spacer()
+                        
+                        
                         VStack(alignment:.leading, spacing: 0){
                             
                             
@@ -99,7 +99,7 @@ struct Events: View {
                                 NavigationLink(
                                     destination: About(event: event).environmentObject(viewModel)
                                 ){
-                                                    CurrentEventCardItem(event: event).environmentObject(viewModel)
+                                    CurrentEventCardItem(event: event).environmentObject(viewModel)
                                 }.buttonStyle(PlainButtonStyle())
                                 // mandando para about
                             }
@@ -113,7 +113,9 @@ struct Events: View {
                 
             }.background(Color(uiColor: .systemGray6))
             
-        }.padding()
+        }.padding(.top)
+            .padding(.horizontal)
+
             .background(Color(uiColor: .systemGray6))
             .onAppear {
                 date = wwdcDate
@@ -170,9 +172,8 @@ struct Events: View {
         .cornerRadius(16)
         .foregroundColor(.white)
         .shadow(color: .black.opacity(0.25), radius: 4, x: 0 , y: 4)
-        .padding(0)
-        .padding(.vertical, 12)
-
+        .padding(.top, 12)
+        
     }
 }
 
@@ -188,8 +189,8 @@ extension Date {
         let components = calendar.dateComponents([.year, .month, .day], from: self)
         let otherComponents = calendar.dateComponents([.year, .month, .day], from: date)
         return components.year == otherComponents.year &&
-               components.month == otherComponents.month &&
-               components.day == otherComponents.day
+        components.month == otherComponents.month &&
+        components.day == otherComponents.day
     }
 }
 extension Date {

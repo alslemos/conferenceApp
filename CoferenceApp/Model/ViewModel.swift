@@ -24,7 +24,7 @@ class ViewModel: ObservableObject {
         speakers = mockData.speakers
         
         todayEvent = events.filter({ event in
-            Calendar.current.isDateInToday(event.date)
+            event.date.isSameDay(as: mockData.wwdcDate)
         })
     }
     

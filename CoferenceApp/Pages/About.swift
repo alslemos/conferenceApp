@@ -37,8 +37,8 @@ struct About: View {
             }
             .padding(.top,40)
         }
-        .padding(20)
-        .padding(.top,40)
+        .padding(.leading,20)
+        .padding(.top,60)
         .background(Color(uiColor: UIColor.secondarySystemBackground).edgesIgnoringSafeArea(.all))
             .edgesIgnoringSafeArea(.all)
     }

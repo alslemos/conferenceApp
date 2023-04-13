@@ -12,7 +12,7 @@ struct Home: View {
     @EnvironmentObject var viewModel: ViewModel
     
     var body: some View {
-        
+        NavigationView {
             ScrollView(showsIndicators: false) {
                 VStack(spacing:0){
                     
@@ -24,7 +24,12 @@ struct Home: View {
                     Spacer(minLength: 10)
                     
                     
-                    Image("perfil")
+                    Image("memojulia")
+                        .resizable()
+                        .frame(width: 89, height: 89)
+                        .background(ThemeManager.shared.colorTheme.color)
+                        .clipShape(Circle())
+                    
                     Text("Hello,")
                         .font(.system(size: 48))
                         .bold()
@@ -57,6 +62,7 @@ struct Home: View {
                     
                 }
                 .padding(.top,20)
+                .padding(.leading, 20)
                 
                 VStack(alignment: .leading){
                     Text("Favorite events")
@@ -74,6 +80,7 @@ struct Home: View {
                         
                     }
                 }
+                .padding(.leading, 20)
                 .padding(.top,20)
                 
                 VStack(alignment:.leading, spacing:10){
@@ -87,11 +94,13 @@ struct Home: View {
                             .environmentObject(viewModel)
                     }
                 }.frame(maxWidth: .infinity,alignment: .leading)
-                .padding(.top,20)
+                    .padding(.top,20)
+                    .padding(.trailing)
+                    .padding(.leading, 20)
             }
-            .padding(20)
+           
             .background(Color(uiColor: UIColor.secondarySystemBackground).edgesIgnoringSafeArea(.all))
-   
+        }
     }
 }
 

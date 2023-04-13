@@ -59,6 +59,15 @@ class Event: Identifiable, Hashable {
 
 struct EventMock {
     
+    var wwdcDate: Date {
+        let calendar = Calendar.current
+        var dateComponents = DateComponents()
+        dateComponents.year = 2023
+        dateComponents.month = 6
+        dateComponents.day = 6
+        return calendar.date(from: dateComponents)!
+    }
+    
      var timCook = Speaker(name: "Tim Cook", role: "CEO", imageName: "timCookImage", events: [])
      var craigFederighi = Speaker(name: "Craig Federighi", role: "VP de engenharia de software", imageName: "craigFederighiImage", events: [])
      var susanPrescott = Speaker(name: "Susan Prescott", role: "VP de Marketing de Aplicativos", imageName: "susanPrescottImage", events: [])
