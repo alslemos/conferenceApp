@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct EventCardItem: View {
+    var event: Event
+    @EnvironmentObject var viewModel: ViewModel
+    
     var speakerName: String = "Lynn Streja"
     var imageName: String = "Alan"
     var description: String = "Everthing about the new programming language Swift"
@@ -18,14 +21,14 @@ struct EventCardItem: View {
         HStack(spacing:0) {
             VStack(alignment: .leading, spacing: 8) {
                 HStack {
-                    Image(imageName)
+                    event.speaker.image
                         .resizable()
                         .aspectRatio(contentMode: .fit)
                         .clipShape(Circle())
                         .frame(width: 46, height: 46)
-                    Text(speakerName)
+                    Text(event.speaker.name)
                 }
-                Text(description)
+                Text(event.description)
                     .font(.caption)
                     .bold()
                     .lineLimit(3)
@@ -42,7 +45,13 @@ struct EventCardItem: View {
                     Image(systemName: "map")
                         .foregroundColor(.white)
                     Button {
-                        print("Favoritou")
+                        if viewModel.favorites.contains(event) {
+                            viewModel.favorites.remove(event)
+                            isFavorite = false
+                        } else {
+                            viewModel.favorites.insert(event)
+                            isFavorite = true
+                        }
                         
                     } label: {
                         Image(systemName: isFavorite ? "heart.fill" : "heart")

@@ -9,7 +9,15 @@ import Foundation
 import SwiftUI
 
 
- class Speaker: Identifiable {
+class Speaker: Identifiable, Hashable {
+    static func == (lhs: Speaker, rhs: Speaker) -> Bool {
+        lhs.id == rhs.id
+    }
+    
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(id)
+    }
+    
     var id: UUID = UUID()
     var name: String
     var role: String
@@ -83,7 +91,7 @@ struct EventMock {
      var gaming: Event
      var appleTV: Event
     
-    var speakers: [Speaker] = []
+    var speakers: Set<Speaker> = []
     var events: Set<Event> = []
     
     init() {

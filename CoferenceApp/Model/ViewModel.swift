@@ -13,8 +13,8 @@ class ViewModel: ObservableObject {
     
     private var mockData = EventMock()
     @Published var events: Set<Event> = []
-    @Published var speakers: [Speaker] = []
-    @Published var favorites: [Event] = []
+    @Published var speakers: Set<Speaker> = []
+    @Published var favorites: Set<Event> = []
     
     @Published var todayEvent: [Event] = []
     

@@ -65,8 +65,9 @@ struct Home: View {
                     
                     ScrollView(.horizontal, showsIndicators: false){
                         HStack(spacing: 20){
-                            ForEach(numbers, id: \.self) { number in
-                                EventCardItem()
+                            ForEach(Array(viewModel.favorites), id: \.id) { event in
+                                EventCardItem(event: event, isFavorite: viewModel.favorites.contains(event))
+                                    .environmentObject(viewModel)
                             }
                         }
                         
@@ -82,7 +83,8 @@ struct Home: View {
                         .fontWeight(.semibold)
                     
                     ForEach(viewModel.todayEvent, id: \.id) { event in
-                        CurrentEventCardItem(event: event, width: 0.90, isFavorite: false)
+                        CurrentEventCardItem(event: event, width: 0.90, isFavorite: viewModel.favorites.contains(event))
+                            .environmentObject(viewModel)
                     }
                 }.frame(maxWidth: .infinity,alignment: .leading)
                 .padding(.top,20)

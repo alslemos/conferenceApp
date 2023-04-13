@@ -9,10 +9,8 @@ import SwiftUI
 
 struct CurrentEventCardItem: View {
     
+    @EnvironmentObject var viewModel: ViewModel
     var event: Event
-    var speakerName: String = "Lynn Streja"
-    var imageName: String = "Alan"
-    var description: String = "Everthing about the new programming language Swift"
     var localization: String = "@Steve Jobs Theater"
     var width: Double = 0.85
     @State var isFavorite: Bool = false
@@ -45,7 +43,13 @@ struct CurrentEventCardItem: View {
                     Image(systemName: "map")
                         .foregroundColor(.white)
                     Button {
-                        print("Favoritou")
+                        if viewModel.favorites.contains(event) {
+                            viewModel.favorites.remove(event)
+                            isFavorite = false
+                        } else {
+                            viewModel.favorites.insert(event)
+                            isFavorite = true
+                        }
                         
                     } label: {
                         Image(systemName: isFavorite ? "heart.fill" : "heart")
