@@ -8,8 +8,20 @@
 import Foundation
 import SwiftUI
 
-struct News {
-    let date: Date
-    let image: Image
-    let body: String
+struct News: Identifiable, Hashable {
+    let id: UUID = UUID()
+    let date: String
+    let title: String
+    let image: String
+    
+}
+
+struct MockNews {
+    let news: [News] = [
+        News(date: "1 hour ago", title:"Apple fitness app is coming to all iPhone users.", image: "fitness"),
+        News(date: "2 hours ago", title:"Apple has announced the next-gen M2 chip.", image: "m2"),
+        News(date: "4 hours ago", title:"New ways to share and communicate in iOS 16.", image: "ios16")
+   ]
+
+
 }

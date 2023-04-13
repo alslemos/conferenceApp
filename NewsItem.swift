@@ -8,13 +8,16 @@
 import SwiftUI
 
 struct NewsItem: View {
+    
+    let new: News
+    
     var body: some View {
         VStack(alignment: .leading,spacing: 5){
-            Image("fitness")
-            Text("1 hour ago")
+            Image(new.image)
+            Text(new.date)
                 .font(.caption)
                 .foregroundColor(.secondary)
-            Text("Apple’s Fitness app is coming to all iPhone users.")
+            Text(new.title)
                 .font(.caption)
                 .fontWeight(.medium)
             
@@ -29,6 +32,6 @@ struct NewsItem: View {
 
 struct NewsItem_Previews: PreviewProvider {
     static var previews: some View {
-        NewsItem()
+        NewsItem(new: News(date: "1 hour ago", title:"Apple fitness app is coming to all iPhone users.", image: "fitness"))
     }
 }
