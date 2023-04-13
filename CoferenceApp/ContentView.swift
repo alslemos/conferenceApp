@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ContentView: View {
     @State var currentPage: Int = 1
-    @EnvironmentObject var themeManager: ThemeManager
+   // @EnvironmentObject var themeManager: ThemeManager
     
    
     var body: some View {
@@ -41,7 +41,7 @@ struct ContentView: View {
                 Text("Profile")
                 Image(systemName: "person")
             }.tag(6)
-                .environmentObject(themeManager)
+               // .environmentObject(themeManager)
          }
         
         }

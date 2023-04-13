@@ -6,8 +6,9 @@
 //
 
 import SwiftUI
+import Combine
 
-struct Number: View{
+struct Number: View {
     @State var phoneNumber: String = " "
     var countriesPhoneCode: [String] = ["🇧🇸 +1", "🇧🇭 +973", "🇧🇩 +880", "🇧🇧 +246", "🇧🇾 +375", "🇧🇪 +32", "🇧🇿 +501", "🇧🇯 +229", "🇧🇹 +975", "🇧🇴 +591", "🇧🇦 +387", "🇧🇼 +267", "🇧🇷 +55", "🇧🇫 +226", "🇧🇮 +257", "🇨🇻 +238", "🇰🇭 +855", "🇨🇲 +237", "🇨🇦 +1", "🇨🇫 +236", "🇹🇩 +235", "🇨🇱 +56", "🇨🇳 +86", "🇨🇴 +57", "🇰🇲 +269", "🇨🇬 +242", "🇨🇩 +243", "🇨🇷 +506", "🇨🇮 +225"]
     @State var selectedCountry: String = "🇧🇷 +55"
@@ -38,6 +39,8 @@ struct Number: View{
                         .font(.caption)
                         TextField("Phone Number", text: $phoneNumber)
                             .keyboardType(.namePhonePad)
+                            .onReceive(Just(phoneNumber)) {_ in limitText(11)}
+
                     }
                     
                 } footer: {
@@ -59,6 +62,12 @@ struct Number: View{
             .edgesIgnoringSafeArea(.all))
         .navigationBarBackButtonHidden(true)
     }
+    
+    func limitText(_ upper: Int) {
+           if phoneNumber.count > upper {
+               phoneNumber = String(phoneNumber.prefix(upper))
+           }
+       }
 }
 
 struct Number_Previews: PreviewProvider {

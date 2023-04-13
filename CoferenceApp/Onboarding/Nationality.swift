@@ -24,7 +24,6 @@ struct Nationality: View {
         Countries(name: "🇧🇷 Brazil")
     ]
     var body: some View {
-        NavigationStack{
             VStack {
                 Text("What is your nationality?")
                     .font(.system(size: 48))
@@ -50,7 +49,6 @@ struct Nationality: View {
             }.background(Color(UIColor.secondarySystemBackground))
                 .navigationBarBackButtonHidden(true)
         }
-    }
 }
 
 
