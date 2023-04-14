@@ -69,6 +69,7 @@ struct Number: View {
            
         } .background(Color(uiColor: UIColor.secondarySystemBackground)
             .edgesIgnoringSafeArea(.all))
+        .ignoresSafeArea(.keyboard, edges: .bottom)
         .navigationBarBackButtonHidden(true)
     }
     
