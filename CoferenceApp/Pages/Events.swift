@@ -34,6 +34,7 @@ struct Events: View {
     var dateFormatter: DateFormatter{
         let formatter = DateFormatter()
         formatter.dateStyle = .long
+        formatter.locale = Locale(identifier: "en_us")
         return formatter
     }
     
@@ -67,7 +68,7 @@ struct Events: View {
                     .background(Color.white)
                     .clipShape(RoundedRectangle(cornerRadius: 10))
                     .padding()
-                    
+                    .environment(\.locale, Locale(identifier: "us"))
                     
                     VStack{
                         Button {
