@@ -21,6 +21,7 @@ struct Home: View {
                         Text("WWDC23").font(.title2).bold()
                         
                     }
+                    .padding(.top, 30)
                     Spacer(minLength: 10)
                     
                     

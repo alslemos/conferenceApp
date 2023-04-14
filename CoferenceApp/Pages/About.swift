@@ -13,34 +13,35 @@ struct About: View {
     var event: Event
     
     var body: some View {
-        
-        ScrollView(showsIndicators: false) {
-            
-            FlippableCardView(speaker: event.speaker)
-                .frame(width: 270,height:390)
-                .shadow(color: Color.black.opacity(0.1), radius: 15, x: 0, y: 10)
-//
-            
-            VStack(alignment:.leading,spacing: 25){
-                Text("My talks @ WWDC23")
-                    .font(.title2)
-                    .fontWeight(.semibold)
+        NavigationStack {
+            ScrollView(showsIndicators: false) {
                 
-                ScrollView(.horizontal,showsIndicators: false){
-                    HStack(spacing: 10){
-                        ForEach(event.speaker.events, id: \.id) { event in
-                            EventCardItem(event: event)
-                                .environmentObject(viewModel)
+                FlippableCardView(speaker: event.speaker)
+                    .frame(width: 270,height:390)
+                    .shadow(color: Color.black.opacity(0.1), radius: 15, x: 0, y: 10)
+                //
+                
+                VStack(alignment:.leading,spacing: 25){
+                    Text("My talks @ WWDC23")
+                        .font(.title2)
+                        .fontWeight(.semibold)
+                    
+                    ScrollView(.horizontal,showsIndicators: false){
+                        HStack(spacing: 10){
+                            ForEach(event.speaker.events, id: \.id) { event in
+                                EventCardItem(event: event)
+                                    .environmentObject(viewModel)
+                            }
                         }
                     }
                 }
+                .padding(.top,40)
             }
-            .padding(.top,40)
-        }
-        .padding(.leading,20)
-        .padding(.top,90)
-        .background(Color(uiColor: UIColor.secondarySystemBackground).edgesIgnoringSafeArea(.all))
+            .padding(.leading,20)
+            .padding(.top,90)
+            .background(Color(uiColor: UIColor.secondarySystemBackground).edgesIgnoringSafeArea(.all))
             .edgesIgnoringSafeArea(.all)
             .toolbarRole(.editor)
+        }
     }
 }
