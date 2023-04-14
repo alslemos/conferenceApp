@@ -38,7 +38,7 @@ struct Number: View {
                         .foregroundColor(.black)
                         .font(.caption)
                         TextField("Phone Number", text: $phoneNumber)
-                            .keyboardType(.namePhonePad)
+                            .keyboardType(.phonePad)
                             .onReceive(Just(phoneNumber)) {_ in limitText(11)}
 
                     }
@@ -71,6 +71,7 @@ struct Number: View {
             .edgesIgnoringSafeArea(.all))
         .ignoresSafeArea(.keyboard, edges: .bottom)
         .navigationBarBackButtonHidden(true)
+        .scrollDisabled(true)
     }
     
     func limitText(_ upper: Int) {
