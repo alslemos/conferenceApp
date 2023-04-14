@@ -18,6 +18,7 @@ struct EnterCode: View{
                     .multilineTextAlignment(.center)
                     .bold()
                     .foregroundColor(.black)
+                    .padding(.top, 30)
                 
                 VStack {
                     TextField("", text: $confirmationCode)
