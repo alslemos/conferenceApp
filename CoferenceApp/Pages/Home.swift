@@ -10,7 +10,7 @@ import SwiftUI
 struct Home: View {
     let numbers = [1, 2, 3, 4, 5]
     @EnvironmentObject var viewModel: ViewModel
-    
+    @State var color: Color  = .teal
     var body: some View {
         NavigationView {
             ScrollView(showsIndicators: false) {
@@ -28,7 +28,7 @@ struct Home: View {
                     Image("memojulia")
                         .resizable()
                         .frame(width: 89, height: 89)
-                        .background(ThemeManager.shared.colorTheme.color)
+                        .background(color)
                         .clipShape(Circle())
                     
                     Text("Hello,")
@@ -56,11 +56,7 @@ struct Home: View {
                                 NewsItem(new: new)
                             }
                         }
-                        
-                        
                     }
-                    
-                    
                 }
                 .padding(.top,20)
                 .padding(.leading, 20)
@@ -101,6 +97,9 @@ struct Home: View {
             }
            
             .background(Color(uiColor: UIColor.secondarySystemBackground).edgesIgnoringSafeArea(.all))
+            .onAppear {
+                color = ThemeManager.shared.colorTheme.color
+            }
         }
     }
 }
