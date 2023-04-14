@@ -23,7 +23,7 @@ struct Nationality: View {
         Countries(name: "Botswana", flag: "🇧🇼", phoneCode: "+267"),
         Countries(name: "Brazil", flag: "🇧🇷", phoneCode: "+55")
     ]
-    
+   // @Environment(\.colorScheme) var colorScheme
     var body: some View {
             VStack {
                 Text("What is your nationality?")
