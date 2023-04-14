@@ -17,7 +17,7 @@ struct News: Identifiable, Hashable {
 }
 
 struct MockNews {
-    let news: [News] = [
+    static let news: [News] = [
         News(date: "1 hour ago", title:"Apple fitness app is coming to all iPhone users.", image: "fitness"),
         News(date: "2 hours ago", title:"Apple has announced the next-gen M2 chip.", image: "m2"),
         News(date: "4 hours ago", title:"New ways to share and communicate in iOS 16.", image: "ios16")
