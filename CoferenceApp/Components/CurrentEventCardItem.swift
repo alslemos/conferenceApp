@@ -44,13 +44,13 @@ struct CurrentEventCardItem: View {
                         .foregroundColor(.white)
                     Button {
                         if viewModel.favorites.contains(event) {
-                            withAnimation {
+                            withAnimation(Animation.easeInOut){
                                 viewModel.favorites.remove(event)
                                 isFavorite = false
                                 event.isFavorite = false
                             }
                         } else {
-                            withAnimation {
+                            withAnimation(Animation.easeInOut) {
                                 viewModel.favorites.insert(event)
                                 isFavorite = true
                                 event.isFavorite = true

@@ -24,7 +24,7 @@ struct AroundMe: View {
             MapAnnotation(coordinate: friend.location.location) {
                 Button {
                     selectedFriend = friend
-                    withAnimation {
+                    withAnimation(Animation.easeInOut) {
                         show.toggle()
                     }
                 } label: {
