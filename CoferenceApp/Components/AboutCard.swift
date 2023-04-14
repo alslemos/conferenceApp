@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct AboutCard: View {
+    @Binding var degree : Double
     var speaker: Speaker
     
     var body: some View {
@@ -46,6 +47,7 @@ struct AboutCard: View {
         .background(.white)
         .frame(width:.infinity, height:.infinity)
         .cornerRadius(20)
+        .rotation3DEffect(Angle(degrees: degree), axis: (x: 0, y: 1, z: 0))
     }
 }
 

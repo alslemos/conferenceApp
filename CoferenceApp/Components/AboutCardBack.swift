@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct AboutCardBack: View {
+    @Binding var degree : Double
     var body: some View {
         VStack(spacing:40){
             Rectangle()
@@ -27,12 +28,13 @@ struct AboutCardBack: View {
         .background(.white)
         .frame(width:.infinity, height:.infinity)
         .cornerRadius(20)
+        .rotation3DEffect(Angle(degrees: degree), axis: (x: 0, y: 1, z: 0))
     }
 }
 
-struct AboutCardBack_Previews: PreviewProvider {
-    static var previews: some View {
-        AboutCardBack()
-    }
-}
+//struct AboutCardBack_Previews: PreviewProvider {
+//    static var previews: some View {
+//        AboutCardBack()
+//    }
+//}
 

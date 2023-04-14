@@ -8,27 +8,42 @@
 import SwiftUI
 
 struct FlippableCardView: View {
+    @State var backDegree = 0.0
+    @State var frontDegree = -90.0
+    let durationAndDelay : CGFloat = 0.3
     var speaker: Speaker
     @State private var isFlipped = false
     
     var body: some View {
         ZStack {
-            if isFlipped {
-                AboutCardBack()
-                    
-                    
-                    .opacity(1)
-            } else {
-                AboutCard(speaker: speaker)
-                    .opacity(1)
-            }
+            AboutCard(degree: $backDegree, speaker: speaker)
+            AboutCardBack(degree: $frontDegree)
         }
         .onTapGesture {
             withAnimation(.easeInOut(duration: 0.9)) {
-                self.isFlipped.toggle()
+                flipCard ()
             }
         }
-        
     }
+    
+    func flipCard () {
+        isFlipped = !isFlipped
+        if isFlipped {
+            withAnimation(.linear(duration: durationAndDelay)) {
+                backDegree = 90
+            }
+            withAnimation(.linear(duration: durationAndDelay).delay(durationAndDelay)){
+                frontDegree = 0
+            }
+        } else {
+            withAnimation(.linear(duration: durationAndDelay)) {
+                frontDegree = -90
+            }
+            withAnimation(.linear(duration: durationAndDelay).delay(durationAndDelay)){
+                backDegree = 0
+            }
+        }
+    }
+    
 }
 
