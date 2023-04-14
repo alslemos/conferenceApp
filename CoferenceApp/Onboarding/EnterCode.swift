@@ -43,7 +43,7 @@ struct EnterCode: View{
                 Spacer()
                 
                 NavigationLink {
-                    ColorPage()
+                    Memoji()
                 } label: {
                     Color.red.opacity(0)
                         .frame(width: 300, height: 300)

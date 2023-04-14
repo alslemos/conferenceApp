@@ -12,6 +12,7 @@ struct CoferenceAppApp: App {
     var body: some Scene {
         WindowGroup {
             Jorge()
+            //ContentView()
         }
     }
 }

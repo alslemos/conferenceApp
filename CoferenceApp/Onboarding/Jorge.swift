@@ -8,18 +8,20 @@
 import SwiftUI
 
 struct Jorge: View {
+    @Environment(\.colorScheme) var colorScheme
+    
     var body: some View {
-        NavigationView{
+        NavigationStack {
             NavigationLink(destination: QRcode()){
                 HStack(alignment: .top){
                     Image(systemName: "apple.logo")
                         .resizable()
-                        .frame(width: 55, height:55)
-                        .foregroundColor(.black)
+                        .frame(width: 55, height:60)
+                        .foregroundColor(self.colorScheme == .dark ? .white : .black)
                     Text("WWDC23")
                         .font(.system(size: 50))
                         .bold()
-                        .foregroundColor(.black)
+                        .foregroundColor(self.colorScheme == .dark ? .white : .black)
                 }
                 .padding(.horizontal, -53.0)
             }
