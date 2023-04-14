@@ -21,7 +21,7 @@ struct CurrentEventCardItem: View {
                 HStack {
                     event.speaker.image
                         .resizable()
-                        .aspectRatio(contentMode: .fit)
+                        .aspectRatio(contentMode: .fill)
                         .clipShape(Circle())
                         .frame(width: 46, height: 46)
                     Text(event.speaker.name)

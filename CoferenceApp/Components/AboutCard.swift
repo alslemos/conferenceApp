@@ -20,6 +20,7 @@ struct AboutCard: View {
             
             speaker.image
                 .resizable()
+                .aspectRatio(contentMode: .fill)
                 .clipShape(Circle())
                 .frame(width: 129, height: 129)
                 .padding(.top,41)
