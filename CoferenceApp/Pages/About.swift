@@ -38,7 +38,7 @@ struct About: View {
             .padding(.top,40)
         }
         .padding(.leading,20)
-        .padding(.top,60)
+        .padding(.top,90)
         .background(Color(uiColor: UIColor.secondarySystemBackground).edgesIgnoringSafeArea(.all))
             .edgesIgnoringSafeArea(.all)
     }
