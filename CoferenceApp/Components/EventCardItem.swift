@@ -46,15 +46,18 @@ struct EventCardItem: View {
                         .foregroundColor(.white)
                     Button {
                         if viewModel.favorites.contains(event) {
-                            viewModel.favorites.remove(event)
-                            isFavorite = false
+                            withAnimation {
+                                viewModel.favorites.remove(event)
+                                isFavorite = false
+                            }
                         } else {
-                            viewModel.favorites.insert(event)
-                            isFavorite = true
+                            withAnimation {
+                                viewModel.favorites.insert(event)
+                                isFavorite = true
+                            }
                         }
-                        
                     } label: {
-                        Image(systemName: isFavorite ? "heart.fill" : "heart")
+                        Image(systemName: viewModel.favorites.contains(event) ? "heart.fill" : "heart")
                     }
                 }
                 .foregroundColor(.white)

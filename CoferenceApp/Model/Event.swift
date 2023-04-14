@@ -24,7 +24,7 @@ class Speaker: Identifiable, Hashable {
     var imageName: String
     var events: [Event]
     var image: Image {
-        return Image("Alan")
+        return Image(imageName)
     }
     
      init(name: String, role: String, imageName: String, events: [Event]) {
@@ -58,6 +58,15 @@ class Event: Identifiable, Hashable {
 }
 
 struct EventMock {
+    
+    var wwdcDate: Date {
+        let calendar = Calendar.current
+        var dateComponents = DateComponents()
+        dateComponents.year = 2023
+        dateComponents.month = 6
+        dateComponents.day = 6
+        return calendar.date(from: dateComponents)!
+    }
     
      var timCook = Speaker(name: "Tim Cook", role: "CEO", imageName: "timCookImage", events: [])
      var craigFederighi = Speaker(name: "Craig Federighi", role: "VP de engenharia de software", imageName: "craigFederighiImage", events: [])
@@ -96,38 +105,45 @@ struct EventMock {
     var events: Set<Event> = []
     
     init() {
-        let startDate = Date()
+        
+        let calendar = Calendar.current
+        var dateComponents = DateComponents()
+        dateComponents.year = 2023
+        dateComponents.month = 6
+        dateComponents.day = 6
+        let startDate = calendar.date(from: dateComponents)!
+        
         let day2 = Date(timeInterval: 60 * 60 * 24, since: startDate)
         let day3 = Date(timeInterval: 60 * 60 * 24 * 2, since: startDate)
         let day4 = Date(timeInterval: 60 * 60 * 24 * 3, since: startDate)
         let day5 = Date(timeInterval: 60 * 60 * 24 * 4, since: startDate)
         
-        wwdc2023 = Event(description: "Apresentação de abertura, novidades e estratégia futura da Apple.", speaker: timCook, date: startDate)
-        macOS = Event(description: "Novidades do sistema operacional macOS e desenvolvimento de apps nativos.", speaker: craigFederighi, date: startDate)
-        hardware = Event(description: "Novas tecnologias de hardware e processadores para dispositivos Apple.", speaker: susanPrescott, date: startDate)
-        appStore = Event(description: "Estratégias de marketing para a loja de aplicativos da Apple e desenvolvimento de negócios.", speaker: susanPrescott, date: startDate)
-        privacy = Event(description: "Segurança e privacidade em dispositivos Apple e soluções de segurança para usuários e empresas.", speaker: timCook, date: startDate)
-        design = Event(description: "Design de interface do usuário e melhores práticas para o desenvolvimento de aplicativos e sistemas Apple.", speaker: susanPrescott, date: startDate)
-        software = Event(description: "Desenvolvimento de software e novidades na plataforma Apple.", speaker: timCook, date: startDate)
-        macBookPro = Event(description: "Apresentação do novo MacBook Pro e suas especificações técnicas.", speaker: susanPrescott, date: day2)
-        watchOS = Event(description: "Novidades do sistema operacional watchOS e seus aplicativos nativos.", speaker: susanPrescott, date: day2)
-        iTunes = Event(description: "Lançamento da nova versão do iTunes com suas atualizações e melhorias.", speaker: timCook, date: day2)
-        iOS = Event(description: "Apresentação do novo sistema operacional iOS e suas novas funcionalidades.", speaker: craigFederighi, date: day2)
-        iPad = Event(description: "Lançamento do novo iPad e suas novas funcionalidades.", speaker: johnySrouji, date: day2)
-        ARKit = Event(description: "Apresentação das novidades do ARKit e suas possibilidades de uso em apps e jogos.", speaker: craigFederighi, date: day2)
-        iCloud = Event(description: "Apresentação das novas funcionalidades do iCloud e sua integração com os dispositivos Apple.", speaker: timCook, date: day2)
-        HomeKit = Event(description: "Apresentação das novas possibilidades de uso do HomeKit em automação residencial.", speaker: craigFederighi, date: day3)
-        AirPods = Event(description: "Lançamento dos novos AirPods e suas novas funcionalidades.", speaker: johnySrouji, date: day3)
-        swift = Event(description: "Atualizações do Swift e tendências na programação para iOS, macOS e outras plataformas Apple.", speaker: craigFederighi, date: day3)
-        ipadOS = Event(description: "Novidades no sistema operacional iPadOS e seu impacto em aplicativos de produtividade e criatividade.", speaker: johnySrouji, date: day3)
-        appleMusic = Event(description: "Evolução da plataforma Apple Music e tendências no mercado de streaming de música.", speaker: johnySrouji, date: day4)
-        airPods = Event(description: "Inovações em fones de ouvido sem fio e tecnologia de áudio para dispositivos Apple.", speaker: johnySrouji, date: day4)
-        augmentedReality = Event(description: "Exploração de recursos de realidade aumentada e oportunidades de negócios na área de AR.", speaker: philSchiller, date: day4)
-        healthKit = Event(description: "Novas funcionalidades do HealthKit e seu potencial para a área de saúde e bem-estar.", speaker: philSchiller, date: day4)
-        homeKit = Event(description: "Atualizações no sistema de automação residencial HomeKit e suas possibilidades de uso em residências inteligentes.", speaker: philSchiller, date: day4)
-        carPlay = Event(description: "Novidades no sistema CarPlay e sua integração com a tecnologia automotiva.", speaker: philSchiller, date: day5)
-        gaming = Event(description: "Oportunidades e tendências na área de jogos para dispositivos Apple e o mercado mobile em geral.", speaker: philSchiller, date: day5)
-        appleTV = Event(description: "Desenvolvimentos recentes da plataforma Apple TV e oportunidades no mercado de streaming de vídeo.", speaker: craigFederighi, date: day5)
+        wwdc2023 = Event(description: "Keynote presentation, news and future strategy from Apple.", speaker: timCook, date: startDate)
+        macOS = Event(description: "What's new in the macOS operating system and native app development.", speaker: craigFederighi, date: startDate)
+        hardware = Event(description: "New hardware and processor technologies for Apple devices.", speaker: susanPrescott, date: startDate)
+        appStore = Event(description: "Apple app store marketing strategies and business development.", speaker: susanPrescott, date: startDate)
+        privacy = Event(description: "Security and privacy on Apple devices and security solutions for users and companies.", speaker: timCook, date: startDate)
+        design = Event(description: "UI design and best practices for developing Apple apps and systems.", speaker: susanPrescott, date: startDate)
+        software = Event(description: "Software development and news on the Apple platform.", speaker: timCook, date: startDate)
+        macBookPro = Event(description: "Presentation of the new MacBook Pro and its technical specifications.", speaker: susanPrescott, date: day2)
+        watchOS = Event(description: "What's new in the watchOS operating system and its native apps.", speaker: susanPrescott, date: day2)
+        iTunes = Event(description: "Release of the new version of iTunes with its updates and improvements.", speaker: timCook, date: day2)
+        iOS = Event(description: "Presentation of the new iOS operating system and its new features.", speaker: craigFederighi, date: day2)
+        iPad = Event(description: "Launch of the new iPad and its new features.", speaker: johnySrouji, date: day2)
+        ARKit = Event(description: "Presentation of ARKit news and its possibilities of use in apps and games.", speaker: craigFederighi, date: day2)
+        iCloud = Event(description: "Presentation of the new features of iCloud and its integration with Apple devices.", speaker: timCook, date: day2)
+        HomeKit = Event(description: "Presentation of the new possibilities of using HomeKit in home automation.", speaker: craigFederighi, date: day3)
+        AirPods = Event(description: "Launch of the new AirPods and their new features.", speaker: johnySrouji, date: day3)
+        swift = Event(description: "Swift updates and trends in programming for iOS, macOS and other Apple platforms.", speaker: craigFederighi, date: day3)
+        ipadOS = Event(description: "What's new in the iPadOS operating system and its impact on productivity and creativity apps.", speaker: johnySrouji, date: day3)
+        appleMusic = Event(description: "Evolution of the Apple Music platform and trends in the music streaming market.", speaker: johnySrouji, date: day4)
+        airPods = Event(description: "Innovations in wireless headphones and audio technology for Apple devices.", speaker: johnySrouji, date: day4)
+        augmentedReality = Event(description: "Exploration of augmented reality resources and business opportunities in the AR area.", speaker: philSchiller, date: day4)
+        healthKit = Event(description: "New HealthKit features and their potential for health and wellness.", speaker: philSchiller, date: day4)
+        homeKit = Event(description: "Updates to the HomeKit home automation system and its possibilities for use in smart homes.", speaker: philSchiller, date: day4)
+        carPlay = Event(description: "New features in the CarPlay system and its integration with automotive technology.", speaker: philSchiller, date: day5)
+        gaming = Event(description: "Opportunities and trends in the area of games for Apple devices and the mobile market in general.", speaker: philSchiller, date: day5)
+        appleTV = Event(description: "Recent Apple TV platform developments and opportunities in the video streaming market.", speaker: craigFederighi, date: day5)
         
         timCook.events = [wwdc2023, privacy, software, iTunes, iCloud]
         craigFederighi.events = [macOS, iOS, ARKit, HomeKit, swift, appleTV]

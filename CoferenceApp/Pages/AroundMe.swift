@@ -24,7 +24,9 @@ struct AroundMe: View {
             MapAnnotation(coordinate: friend.location.location) {
                 Button {
                     selectedFriend = friend
-                    show.toggle()
+                    withAnimation {
+                        show.toggle()
+                    }
                 } label: {
                     Image(friend.memoji)
                         .resizable()
@@ -55,7 +57,9 @@ struct AroundMe: View {
                             .bold()
                         Spacer()
                         Button {
-                            show.toggle()
+                            withAnimation {
+                                show.toggle()
+                            }
                         } label: {
                             Image(systemName: "xmark.circle.fill")
                                 .font(.largeTitle)

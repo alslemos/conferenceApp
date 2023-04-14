@@ -20,8 +20,13 @@ struct Profile: View {
             }
             Spacer(minLength: 15)
         
-            Image("perfil")
-                .clipShape(Circle())
+        
+                Image("memojulia")
+                    .resizable()
+                    .frame(width: 89, height: 89)
+                    .background(ThemeManager.shared.colorTheme.color)
+                    .clipShape(Circle())
+            
             Spacer()
             List {
                 

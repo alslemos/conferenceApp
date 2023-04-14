@@ -11,12 +11,21 @@ struct Events: View {
     let numbers = [1, 2, 3, 4, 5] // importado do eduardo
     @EnvironmentObject var viewModel: ViewModel
     
+    var wwdcDate: Date {
+        let calendar = Calendar.current
+        var dateComponents = DateComponents()
+        dateComponents.year = 2023
+        dateComponents.month = 6
+        dateComponents.day = 6
+        return calendar.date(from: dateComponents)!
+    }
+    
     @State private var date = Date()
     
     let dateRange: ClosedRange<Date> = {
         let calendar = Calendar.current
-        let startComponents = DateComponents(year: 2023, month: 6, day: 5)
-        let endComponents = DateComponents(year: 2023, month: 6, day: 11)
+        let startComponents = DateComponents(year: 2023, month: 6, day: 6)
+        let endComponents = DateComponents(year: 2023, month: 10, day: 10)
         return calendar.date(from:startComponents)!
         ...
         calendar.date(from:endComponents)!
@@ -30,63 +39,67 @@ struct Events: View {
     
     var body: some View {
         NavigationView() {
-            
-            VStack{
-                
-                HStack(alignment: .top){
-                    Image(systemName: "apple.logo").font(.title2)
-                    Text("WWDC23").font(.title2).bold()
-                    
-                }
-                
-                Spacer(minLength: 15)
-                
-                Text("Check the full schedule")
-                    .font(.title3.bold())
-                
-                DatePicker(
-                    "Select a date",
-                    selection: $date,
-                    in: dateRange,
-                    displayedComponents: [.date]
-                )
-                
-                .datePickerStyle(.graphical)
-                .labelsHidden()
-                .accentColor(Color.red)
-                .frame(height: 170, alignment: .top)
-                .background(Color.white)
-                .clipShape(RoundedRectangle(cornerRadius: 10))
-                .padding()
-                
-                
+            ScrollView(showsIndicators: false){
                 VStack{
-                    // so a flecinha eh botao
-                    Button {
-                        // acao
+                    
+                    HStack(alignment: .top){
+                        Image(systemName: "apple.logo").font(.title2)
+                        Text("WWDC23").font(.title2).bold()
                         
-                    } label: {
-                        Text(dateFormatter.string(from: date).description)
-                            .frame(maxWidth: .infinity, alignment: .leading)
-                            .foregroundColor(.black)
-                            .font(.title.bold())
-                        Image(systemName: "chevron.forward")
-                            .font(.title)
-                            .foregroundColor(.red)
+                    }
+                    
+                    Spacer(minLength: 15)
+                    
+                    Text("Check the full schedule")
+                        .font(.title3.bold())
+                    
+                    DatePicker(
+                        "Select a date",
+                        selection: $date,
+                        in: dateRange,
+                        displayedComponents: [.date]
+                    )
+                    
+                    .datePickerStyle(.graphical)
+                    .labelsHidden()
+                    .accentColor(Color.red)
+                    .frame(height: 170, alignment: .top)
+                    .background(Color.white)
+                    .clipShape(RoundedRectangle(cornerRadius: 10))
+                    .padding()
+                    
+                    
+                    VStack{
+                        Button {
+                            withAnimation {
+                                date = date.addingOneDay()
+                            }
+                            
+                        } label: {
+                            Text(dateFormatter.string(from: date).description)
+                                .frame(maxWidth: .infinity, alignment: .leading)
+                                .foregroundColor(.black)
+                                .font(.title.bold())
+                            Image(systemName: "chevron.forward")
+                                .font(.title)
+                                .foregroundColor(.red)
+                            
+                        }.padding()
                         
-                    }.padding()
-                    
-                    
-                    Spacer()
-                    
-                    ScrollView{
+                        
+                        Spacer()
+                        
+                        
                         VStack(alignment:.leading, spacing: 0){
                             
                             
-                            ForEach(numbers, id: \.self) { number in
-                                NavigationLink(destination: About()){
-                                    EmptyView()
-//                                    CurrentEventCardItem(speakerName: "Lynn Streja",imageName: "Alan",description: "Everthing about the new programming language Swift", localization: "@Steve Jobs Theater", width: 0.90, isFavorite: false)
+                            ForEach(viewModel.events.filter({ event in
+                                event.date.isSameDay(as: date)
+                            }), id: \.self) { event in
+                                NavigationLink(
+                                    destination: About(event: event).environmentObject(viewModel)
+                                ){
+                                    CurrentEventCardItem(event: event).environmentObject(viewModel)
                                 }.buttonStyle(PlainButtonStyle())
                                 // mandando para about
                             }
@@ -100,8 +113,13 @@ struct Events: View {
                 
             }.background(Color(uiColor: .systemGray6))
             
-        }.padding()
+        }.padding(.top)
+            .padding(.horizontal)
+
             .background(Color(uiColor: .systemGray6))
+            .onAppear {
+                date = wwdcDate
+            }
         
     }
     
@@ -154,9 +172,8 @@ struct Events: View {
         .cornerRadius(16)
         .foregroundColor(.white)
         .shadow(color: .black.opacity(0.25), radius: 4, x: 0 , y: 4)
-        .padding(0)
-        .padding(.vertical, 12)
-
+        .padding(.top, 12)
+        
     }
 }
 
@@ -166,3 +183,19 @@ struct Events_Previews: PreviewProvider {
     }
 }
 
+extension Date {
+    func isSameDay(as date: Date) -> Bool {
+        let calendar = Calendar.current
+        let components = calendar.dateComponents([.year, .month, .day], from: self)
+        let otherComponents = calendar.dateComponents([.year, .month, .day], from: date)
+        return components.year == otherComponents.year &&
+        components.month == otherComponents.month &&
+        components.day == otherComponents.day
+    }
+}
+extension Date {
+    func addingOneDay() -> Date {
+        let calendar = Calendar.current
+        return calendar.date(byAdding: .day, value: 1, to: self) ?? self
+    }
+}

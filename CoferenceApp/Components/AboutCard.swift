@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct AboutCard: View {
+    var speaker: Speaker
+    
     var body: some View {
         VStack(spacing:0){
             Rectangle()
@@ -15,14 +17,18 @@ struct AboutCard: View {
                        .cornerRadius(2.5)
                        .foregroundColor(Color(uiColor: UIColor.secondarySystemBackground))
             
-            Image("AboutProfile")
+            speaker.image
+                .resizable()
+                .clipShape(Circle())
+                .frame(width: 129, height: 129)
                 .padding(.top,41)
                 .padding(.bottom,0)
+                .shadow(radius: 2)
             VStack{
                 Text("Hello,")
                     .font(.body)
                     .fontWeight(.bold)
-                Text("I'm Lynn Streja")
+                Text("I'm \(speaker.name)")
                     .fontWeight(.regular)
             }.padding(.top,30)
             
@@ -43,8 +49,3 @@ struct AboutCard: View {
     }
 }
 
-struct AboutCard_Previews: PreviewProvider {
-    static var previews: some View {
-        AboutCard()
-    }
-}

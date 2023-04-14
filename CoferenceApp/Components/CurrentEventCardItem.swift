@@ -44,13 +44,17 @@ struct CurrentEventCardItem: View {
                         .foregroundColor(.white)
                     Button {
                         if viewModel.favorites.contains(event) {
-                            viewModel.favorites.remove(event)
-                            isFavorite = false
-                            event.isFavorite = false
+                            withAnimation {
+                                viewModel.favorites.remove(event)
+                                isFavorite = false
+                                event.isFavorite = false
+                            }
                         } else {
-                            viewModel.favorites.insert(event)
-                            isFavorite = true
-                            event.isFavorite = true
+                            withAnimation {
+                                viewModel.favorites.insert(event)
+                                isFavorite = true
+                                event.isFavorite = true
+                            }
                         }
                         
                     } label: {

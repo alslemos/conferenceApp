@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct FlippableCardView: View {
+    var speaker: Speaker
     @State private var isFlipped = false
     
     var body: some View {
@@ -18,7 +19,7 @@ struct FlippableCardView: View {
                     
                     .opacity(1)
             } else {
-                AboutCard()
+                AboutCard(speaker: speaker)
                     .opacity(1)
             }
         }
@@ -31,8 +32,3 @@ struct FlippableCardView: View {
     }
 }
 
-struct FlippableCard_Previews: PreviewProvider {
-    static var previews: some View {
-        FlippableCardView()
-    }
-}
