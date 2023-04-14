@@ -41,5 +41,6 @@ struct About: View {
         .padding(.top,90)
         .background(Color(uiColor: UIColor.secondarySystemBackground).edgesIgnoringSafeArea(.all))
             .edgesIgnoringSafeArea(.all)
+            .toolbarRole(.editor)
     }
 }
